@@ -1,0 +1,65 @@
+<ion-content class="vertical-align-content">
+  <ion-grid class="ion-margin">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12">
+        <ion-card class="ion-padding">
+          <ion-card-header class="ion-justify-content-center ion-text-center">
+            <img src="../../assets/icon/favicon.png">
+            <ion-card-title class="ion-padding-bottom" style="font-size: 18px; font-weight: bold;">
+                ثبت نام
+              </ion-card-title>
+          </ion-card-header>
+          <ion-card-content >
+            <ion-row style="padding-bottom: 0.5em;">
+            <ion-label style="font-size: 16px;">آدرس ایمیل یا شماره همراه</ion-label>
+          </ion-row>
+            <ion-item class="ion-text-left ">
+              <ion-icon  style='color:#004a73' name="mail"></ion-icon>
+              <ion-input [(ngModel)]="phone_no"></ion-input>
+            </ion-item>
+            <ion-row class="ion-padding-top" style="padding-bottom: 0.5em;">
+            <ion-label style="font-size: 16px;">رمز عبور</ion-label>
+          </ion-row>
+            <ion-item class="ion-text-left">
+                <ion-icon style='color:#004a73' [name]="is_TextFieldType ? 'eye-off' : 'eye'" (click)="togglePasswordFieldType()">
+                </ion-icon>
+              <ion-input [(ngModel)]="pass" [type]="is_TextFieldType ? 'text' : 'password'">
+              </ion-input>
+            </ion-item >
+            <ion-row class="ion-padding-top" style="padding-bottom: 0.5em;">
+            <ion-label style="font-size: 16px;">تکرار رمز عبور</ion-label>
+          </ion-row>
+            <ion-item class="ion-text-left" >
+                <ion-icon style='color:#004a73' [name]="is_TextFieldType ? 'eye-off' : 'eye'" (click)="togglePasswordFieldType()">
+                </ion-icon>
+              <ion-input [(ngModel)]="pass_rep" [type]="is_TextFieldType ? 'text' : 'password'">
+              </ion-input>
+            </ion-item>
+            <!-- <ion-row>
+              <ion-col>
+            <ion-text color="dark" [routerLink]="['/login']">
+              رمز عبور خود را فراموش کرده اید؟
+            </ion-text>
+          </ion-col>
+          </ion-row> -->
+          </ion-card-content>
+        </ion-card>
+        <ion-row style="margin-top:-30px;z-index: 2;" class="ion-text-center ion-no-padding">
+          <ion-col class="ion-no-margin ion-nopadding">
+            <ion-button (click)="confirm()" size="medium" >
+              ثبت نام
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-text color="dark" routerLink="/signin" style="text-decoration:underline">
+          <h5>قبلا ثبت نام کرده اید؟</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

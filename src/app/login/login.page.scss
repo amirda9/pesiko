@@ -1,0 +1,29 @@
+ion-content{
+    --ion-background-color: #f2f4ff;
+}
+ion-card{
+    --ion-backround-color: white;
+    background-color : white !important;
+}
+ion-toolbar{
+    --ion-background-color : white;
+}
+ion-icon{
+    --color:#004a73 !important;
+}
+ion-item{ 
+    --background : #c9dfeb;
+}
+ion-input{
+    --color:#004a73;
+}
+ion-button{
+    background-color:#86dafb !important;
+    // margin-top:-30px;
+    border-radius:18px;
+    color:black;
+}
+
+ion-label{
+    color: #3d4054;
+}

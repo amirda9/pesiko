@@ -1,0 +1,71 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>blog</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-row>
+    <ion-toolbar >
+      <ion-buttons slot="end">
+        <ion-back-button color="primary" defaultHref="/tabs"> </ion-back-button>
+      </ion-buttons>
+      <!-- <ion-buttons slot="start">
+        <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
+      </ion-buttons> -->
+      <ion-title  style="font-weight: bold; font-size: 19pt;" class="ion-text-center">
+        بلاگ
+      </ion-title>
+    </ion-toolbar>
+    
+  </ion-row>
+  <ion-grid>
+  <!-- <ion-row class="ion-justify-content-center">
+
+    <ion-col size="11" class="ion-text-right">
+      <ion-searchbar placeholder="جستجو کنید"></ion-searchbar>
+    </ion-col>
+  </ion-row> -->
+  <!-- <ion-row class="ion-justify-content-center">
+    <ion-col size="1" class="vertical-center ion-text-center">
+
+        <ion-button class="ion-no-padding" fill="clear" (click)="slidePrev()"><ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
+    </ion-col>
+    <ion-col size="1" class="vertical-center ion-text-center">
+        <ion-button class="ion-no-padding" fill="clear" (click)="slideNext()">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-button>
+    </ion-col>
+</ion-row> -->
+  <div *ngFor="let post of postNodes | async">
+  <ion-row>
+    <ion-col>
+      <!-- {{post.content}} -->
+    <app-blog-post [type]="[post.type]" [title]="post.node.title" [src]="post.node.images.edges[0].node.image" [description]="[post.node.content]" [id]="post.node.id"></app-blog-post>  
+  </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col>
+      <hr>
+    </ion-col>
+  </ion-row>
+</div>
+</ion-grid>
+</ion-content>
+<!-- 
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/conditions-list">
+    <ion-icon style='color:white;' name="keypad"></ion-icon>
+    <ion-label color="light">داشبورد</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/tab2">
+    <ion-icon style='color:white;' name="calendar"></ion-icon>
+    <ion-label color="light">لیست کار</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/tab3">
+    <ion-icon style='color:white;' name="home"></ion-icon>
+    <ion-label color="light">خانه</ion-label>
+  </ion-tab-button>
+</ion-tab-bar> -->

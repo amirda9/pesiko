@@ -1,0 +1,21 @@
+query tracks($ID:ID!){
+	podcast(id:$ID){
+  title
+images{
+      edges{
+        node{
+          image
+        }
+      }
+    }
+    tracks{
+      edges{
+        node{
+          audioFile {
+            file
+          }
+        }
+      }
+    }
+	}
+}

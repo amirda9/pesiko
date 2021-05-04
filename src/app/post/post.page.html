@@ -1,0 +1,27 @@
+
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button color="primary" defaultHref="/tabs"> </ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: bold; font-size: 19pt; margin-left: -2.2em;" class="ion-text-center">
+      پست
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-row class="ion-padding">
+    <ion-col>
+      <img src="https://pesiko.liara.run/mediafiles/{{src}}" alt="" style="border-radius: 5%; max-height: 190px; width: 100%;">
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      {{title}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+    <div [innerHTML]="content"></div>
+  </ion-col>
+  </ion-row>
+</ion-content>

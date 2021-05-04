@@ -1,0 +1,43 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>podcast-page</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-text-center">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button color="primary" defaultHref="tabs/tab3"></ion-back-button>
+      <!-- <ion-button size="large" color="primary"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> -->
+    </ion-buttons>
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
+    </ion-buttons> -->
+    <ion-title style="font-weight: bold; font-size: 19pt;" class="ion-text-center">
+       پادکست ها
+    </ion-title>
+  </ion-toolbar>
+
+  <div *ngFor="let item of Pods | async" class="ion-padding">
+    
+    <ion-row>
+    <ion-col >
+    {{item.node.title}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col >
+      <div [innerHTML]="item.node.content"></div>
+    </ion-col>
+  </ion-row>
+  
+  
+  <ion-row>
+    <ion-col>
+    <ion-button shape="round" (click)="play(item.node.id)">
+      پخش
+    </ion-button>
+    </ion-col>
+  </ion-row>
+  </div>
+</ion-content>

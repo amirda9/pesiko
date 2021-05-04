@@ -1,0 +1,132 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>podcast-page</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-text-center">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button color="primary" defaultHref="therapy-gen"></ion-back-button>
+      <!-- <ion-button size="large" color="primary"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> -->
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-weight: bold; font-size: 19pt;" class="ion-text-center">
+      پادکست
+    </ion-title>
+  </ion-toolbar>
+<ion-grid>
+  <ion-row class="ion-padding-horizontal" >
+    <ion-col size ="5" style="padding-top: 10%;" class="vertical-align-content">
+
+      <ion-grid>
+    
+        <ion-row class="ion-padding-bottom ion-text-right">
+          <ion-col>
+          <ion-label style="font-weight: bold; font-size: 15pt; white-space: nowrap;">
+            <strong>
+           پادکست خواب
+            </strong>
+          </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-right">
+          <ion-button size="large" class="ion-text-right ion-no-padding" fill="clear">
+            <ion-icon name="share-social"></ion-icon>
+          </ion-button>
+        </ion-col>
+        </ion-row>
+      
+      </ion-grid>
+      <!-- <ion-row >  -->
+        <!-- <ion-label class="vertical-align-content">
+          Podcast Title
+        </ion-label> -->
+      <!-- </ion-row> -->
+      <!-- <ion-row> -->
+        
+      <!-- </ion-row> -->
+    </ion-col>
+    <ion-col size="7">
+      <img src="../../assets/Eminem-3.jpeg" style="border-radius:5%; height:100%; width: 100%;">
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!-- </ion-list> -->
+</ion-content>
+
+<!-- <div *ngIf="this.serv.activetrack==null">
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/conditions-list">
+    <ion-icon style='color:white;' name="keypad"></ion-icon>
+    <ion-label color="light">داشبورد</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/tab2">
+    <ion-icon style='color:white;' name="calendar"></ion-icon>
+    <ion-label color="light">لیست کار</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/tab3">
+    <ion-icon style='color:white;' name="home"></ion-icon>
+    <ion-label color="light">خانه</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
+</div> -->
+
+<!-- <ion-footer  style="height:15%;"> -->
+<!-- <ion-toolbar *ngIf="this.serv.activetrack" style=" --ion-background-color:#007cbf;">
+  <ion-row style="height:100%;">
+  <ion-col size="8" style="height:auto;" class="ion-text-right ion-padding-horizontal vertical-align-content">
+    <ion-label color="light" style="height:auto;" class="vertical-align-content">
+      <strong>
+    {{this.serv.activetrack.name}} - قسمت{{this.serv.activetrack.part}}
+  </strong>
+    </ion-label>
+  </ion-col>
+  <ion-col class="ion-text-center" size="3">
+    <ion-button  color="light" style="--border-radius:50%;" *ngIf="this.serv.state" (click)="togglePlayer(true)" shape="circle">
+      <ion-icon color="primary" name="pause"></ion-icon>
+    </ion-button>
+    <ion-button  color="light" style="--border-radius:50%;" *ngIf="!this.serv.state" (click)="togglePlayer(false)">
+        <ion-icon color="primary" name="play"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col size="1" class="ion-text-left">
+    <ion-icon size="large" color="light" class="ion-text-left" name="chevron-up-outline" (click)="openModal(this.serv.activetrack)"></ion-icon>
+  </ion-col>
+</ion-row>
+</ion-toolbar> -->
+<!-- </ion-footer> -->
+
+<!-- <ion-footer >
+  <ion-toolbar *ngIf="this.serv.activetrack">
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        {{this.serv.activetrack.name}}
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-button fill="clear">
+          <ion-icon name="play-forward-outline"></ion-icon>
+        </ion-button>
+        <ion-button  fill="clear" *ngIf="this.serv.state" (click)="togglePlayer(true)">
+          <ion-icon name="pause"></ion-icon>
+          </ion-button>
+          <ion-button  fill="clear" *ngIf="!this.serv.state" (click)="togglePlayer(false)">
+            <ion-icon name="play"></ion-icon>
+            </ion-button>
+          <ion-button  fill="clear">
+            <ion-icon name="play-back-outline"></ion-icon>
+          </ion-button>
+          <ion-col size="12" class="ion-text-center">
+            <ion-range #range [(ngModel)]="this.serv.progress" max="100" color="success" (touchend)="seek()" (mouseup)="seek()">
+
+            </ion-range>
+          </ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer> -->

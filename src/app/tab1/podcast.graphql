@@ -1,0 +1,13 @@
+query podcast{
+  allPodcasts{
+    edges
+    {
+      node
+      {
+        title
+        content
+        id
+      }
+    }
+  }
+}

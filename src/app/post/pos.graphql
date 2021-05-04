@@ -1,0 +1,14 @@
+query post($ID:ID!){
+  post(id:$ID){
+    title
+    description
+    content
+    images{
+      edges{
+        node{
+          image
+        }
+      }
+    }
+  }
+}

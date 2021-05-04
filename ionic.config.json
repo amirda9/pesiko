@@ -1,0 +1,7 @@
+{
+  "name": "pesiko",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,96 @@
+<ion-content dir="ltr" class="vertical-align-content">
+  <ion-grid class="ion-margin">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-lg="6">
+
+    <ion-card>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+        <ion-back-button defaultHref="register"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+      <ion-card-header class="ion-justify-content-center ion-text-center">
+        <!-- <img src="../../assets/icon/favicon.png"> -->
+        <img src="../../assets/icon/favicon.png">
+        <ion-card-title ><strong>
+            کد فعالسازی
+          </strong></ion-card-title>
+        </ion-card-header>
+      <!-- <ion-grid> -->
+        <ion-row class="ion-padding-top">
+          <ion-col class="ion-text-center">
+            <ion-label style="color: black;">
+              <strong>
+                لطفا کد فعالسازی ۵ رقمی دریافتی را وارد کنید
+              </strong>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-text-center ion-padding-bottom">
+          <ion-col size="12" class="ion-text-center">
+            <div id="form" class="valid" >
+              <input type="text" [(ngModel)]="pass1" pattern="\d*" style="font-size: 2em;" placeholder="__" class="ion-text-center" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+              -
+              <input type="text" [(ngModel)]="pass2" pattern="\d*" style="font-size: 2em;"placeholder="__" class="ion-text-center" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+              -
+              <input type="text" [(ngModel)]="pass3" pattern="\d*" style="font-size: 2em;"placeholder="__" class="ion-text-center" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+              -
+              <input type="text" [(ngModel)]="pass4" pattern="\d*" style="font-size: 2em;"placeholder="__" class="ion-text-center" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+              -
+              <input type="text" [(ngModel)]="pass5" pattern="\d*" style="font-size: 2em;" placeholder="__" class="ion-text-center" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+              <!-- <button class="btn btn-primary btn-embossed">Verify</button> -->
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="time_left" style="padding-bottom: 3em;">
+          <ion-col class="ion-text-center">
+
+            <ion-label dir="rtl" style="color:black; text-align: right;">
+              {{time}} ثانیه
+            </ion-label>
+            <ion-label dir="rtl" style="color:black; text-align: right;">
+              زمان باقی مانده :
+           </ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="!time_left" style="padding-bottom: 3em;">
+          <ion-col class="ion-text-center">
+
+            <ion-label class="vertical-align-content" style="text-decoration: underline!important;" dir="rtl" (click)="TryAgain()">
+                <!-- <ion-icon name="refresh-outline" style="color: black;"></ion-icon> -->
+                <a style="padding-right: 2px;  color: black;">
+             ارسال مجدد ؟
+            </a>
+           </ion-label>
+          </ion-col>
+        </ion-row>
+
+
+    </ion-card>
+  </ion-col>
+    </ion-row>
+    <!-- <ion-row style="margin-top: -3em;" class="ion-padding-bottom">
+      <ion-col size="12" class="ion-text-center" >
+        <ion-button  style="--background: #00a750;">
+        Send
+        </ion-button>
+      </ion-col>
+    </ion-row> -->
+
+
+  <!-- <ion-row style="margin-top: -3em;">
+    <ion-col size="12" class="ion-text-center" >
+      <ion-button (click)="confirm()" style="--background: #00a750;">
+        ثبت نام
+      </ion-button>
+    </ion-col>
+  </ion-row> -->
+
+<!-- </ion-grid> -->
+<!-- </ion-card>
+</ion-col>
+</ion-row> -->
+</ion-grid>
+</ion-content>

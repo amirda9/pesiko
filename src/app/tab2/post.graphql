@@ -1,0 +1,19 @@
+query posts{
+  allPosts{
+    edges{
+      node{
+        title
+        id
+        description
+        content
+        images{
+          edges{
+            node{
+              image
+            }
+          }
+        }
+      }
+    }
+  }
+}
