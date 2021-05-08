@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonRange, LoadingController, ModalController } from '@ionic/angular';
-import { TracksGQL } from 'src/generated/graphql';
+import { map } from 'rxjs/operators';
+import { TracksGQL, TracksQuery } from 'src/generated/graphql';
+import Observable from 'zen-observable';
 import { AudioService } from '../audio.service';
 import { MusicPage } from '../music/music.page';
 
@@ -22,6 +24,7 @@ export class PodPagePage implements OnInit {
   image:any;
   title:string;
   @ViewChild('range',{static:false}) range: IonRange ;
+  tracks:Observable<TracksQuery ['podcast']['tracks']['edges']>
   playlist=this.serv.playlist;
   progress=this.serv.progress;
   
@@ -42,18 +45,22 @@ export class PodPagePage implements OnInit {
         // console.log(res);
         this.title = res.data.podcast.title;
         this.image = res.data.podcast.images.edges[0].node.image;
-        console.log(this.image)
+        // console.log(this.image)
       }
     )
+
+    this.tracks = this.trackGQL.watch({
+      ID:this.id
+    }).valueChanges.pipe(map(res=>res.data.podcast.tracks.edges))
   }
 
 
-  async  func(track :Track){
+  async  func(e){
     const loading = await this.loadingController.create({
       message: 'در حال بارگزاری'
       });
       loading.present();
-      this.serv.start(track);
+      this.serv.start(e);
       loading.dismiss()
     }
   start(track :Track){

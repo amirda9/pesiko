@@ -55,9 +55,13 @@
     </ion-col>
   </ion-row>
   
-  <ion-row *ngFor="let track of playlist" (click)="func(track)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
-    <app-podcast style=" width: 100%;" part={{track.part}}></app-podcast>
+  <ion-row *ngFor="let track of tracks | async" (click)="func(track.node.audioFile.file)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
+    <app-podcast style=" width: 100%;" track={{track.node.audioFile.file}} Name={{title}}></app-podcast>
   </ion-row>
+
+  <!-- <ion-row *ngFor="let track of playlist" (click)="func(track)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
+    <app-podcast style=" width: 100%;" part={{track.part}}></app-podcast>
+  </ion-row> -->
 </ion-grid>
 
 <!-- </ion-list> -->
@@ -98,7 +102,7 @@
     <ion-col class="ion-text-center vertical-align-content" size="4" style="padding-top: 0.7em;">
       <ion-label color="light" style="height:auto;" class="vertical-align-content">
         <strong>
-       قسمت{{this.serv.activetrack.part}}
+       {{title}}
     </strong>
       </ion-label>
     </ion-col>
