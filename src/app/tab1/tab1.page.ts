@@ -3,6 +3,8 @@ import { NavigationExtras, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PodcastGQL, PodcastQuery } from 'src/generated/graphql';
+import { AudioService } from '../audio.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-tab1',
@@ -12,7 +14,7 @@ import { PodcastGQL, PodcastQuery } from 'src/generated/graphql';
 export class Tab1Page {
 
   Pods:Observable<PodcastQuery['allPodcasts']['edges']>;
-  constructor(private router:Router,private podcastGQL:PodcastGQL) {
+  constructor(private router:Router,private podcastGQL:PodcastGQL , private authservice:AuthService) {
     this.Pods = podcastGQL.watch(
       ).valueChanges.pipe(map(result => result.data.allPodcasts.edges));
       
@@ -29,6 +31,15 @@ export class Tab1Page {
   }
 
 
+
+  logout(){
+    this.authservice.logout();
+    this.router.navigate(['/login']);
+  }
+
+  shop(){
+    this.router.navigate(['/tabs/cart']);
+  }
   }
 
 

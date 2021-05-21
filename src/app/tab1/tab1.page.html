@@ -1,25 +1,26 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar>
-    <ion-title>podcast-page</ion-title>
+    <ion-title style="font-weight: bold; font-size: 19pt;" class="ion-text-center">
+      پادکست ها
+   </ion-title>
+   <ion-buttons slot="start">
+    <ion-button (click)="logout()">
+      <ion-icon name="exit-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-buttons slot="end">
+    <ion-button (click)="shop()">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
 <ion-content class="ion-text-center">
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-back-button color="primary" defaultHref="tabs/tab3"></ion-back-button>
-      <!-- <ion-button size="large" color="primary"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> -->
-    </ion-buttons>
-    <!-- <ion-buttons slot="start">
-      <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
-    </ion-buttons> -->
-    <ion-title style="font-weight: bold; font-size: 19pt;" class="ion-text-center">
-       پادکست ها
-    </ion-title>
-  </ion-toolbar>
 
   <div *ngFor="let item of Pods | async" class="ion-padding">
-    
+    <ion-card>
     <ion-row>
     <ion-col >
     {{item.node.title}}
@@ -32,12 +33,14 @@
   </ion-row>
   
   
-  <ion-row>
+  <ion-row class="ion-padding-bottom"> 
     <ion-col>
     <ion-button shape="round" (click)="play(item.node.id)">
       پخش
     </ion-button>
     </ion-col>
   </ion-row>
+
+</ion-card>
   </div>
 </ion-content>

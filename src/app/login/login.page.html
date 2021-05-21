@@ -5,7 +5,8 @@
         <ion-card class="ion-padding">
           <ion-toolbar>
             <ion-buttons slot="end">
-            <ion-back-button defaultHref="signin"></ion-back-button>
+            <!-- <ion-back-button defaultHref="signin"></ion-back-button> -->
+
           </ion-buttons>
         </ion-toolbar>
           <ion-card-header class="ion-justify-content-center ion-text-center">
@@ -31,16 +32,16 @@
               <ion-input class="ion-text-left" [(ngModel)]="pass" [type]="is_TextFieldType ? 'text' : 'password'">
               </ion-input>
             </ion-item>
-            <ion-row class="ion-padding-vertical" >
+            <ion-row style="padding-top: 2em; padding-bottom: em;"  >
               <ion-col class="ion-text-center">
-            <ion-text  style="color: black;" [routerLink]="['/login']">
+            <ion-text  style="color: black; font-size: 0.8em;" [routerLink]="['/login']">
               رمز عبور خود را فراموش کرده اید؟
             </ion-text>
           </ion-col>
           </ion-row>
           </ion-card-content>
         </ion-card>
-        <ion-row style="margin-top:-40px;z-index: 2;" class="ion-text-center ion-no-padding">
+        <ion-row style="margin-top:-3em; z-index: 2;" class="ion-text-center ion-no-padding">
           <ion-col class="ion-no-margin ion-nopadding">
             <ion-button color="lightBlue" (click)="confirm()" size="medium" fill="solid" shape="round">
               ورود

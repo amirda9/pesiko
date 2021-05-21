@@ -7,8 +7,9 @@
 <ion-content class="ion-text-center">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-back-button color="primary" defaultHref="tabs/tab1"></ion-back-button>
-      <!-- <ion-button size="large" color="primary"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> -->
+      <ion-button routerLink="/tabs/tab1" routerDirection="back">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <!-- <ion-buttons slot="start">
       <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
@@ -20,7 +21,7 @@
 <ion-grid>
   <ion-row class="ion-padding-horizontal" >
     <ion-col size ="5" style="padding-top: 10%;" class="vertical-align-content">
-
+`
       <ion-grid>
     
         <ion-row class="ion-padding-bottom ion-text-right">
@@ -51,12 +52,24 @@
       <!-- </ion-row> -->
     </ion-col>
     <ion-col size="7">
-      <img src="http://pesiko.liara.run/mediafiles/{{image}}" style="border-radius:5%; height:100%; width: 100%;">
+      <!-- <img src="http://pesiko.liara.run/mediafiles/{{image}}" style="border-radius:5%; height:100%; width: 100%;"> -->
+      <img src="../../assets/blog.webp" style="border-radius:5%; height:100%; width: 100%;">
     </ion-col>
   </ion-row>
   
+  <div *ngIf="hasBought" class="ion-padding-top">
   <ion-row *ngFor="let track of tracks | async" (click)="func(track.node.audioFile.file)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
     <app-podcast style=" width: 100%;" track={{track.node.audioFile.file}} Name={{title}}></app-podcast>
+  </ion-row>
+</div>
+
+
+  <ion-row *ngIf="!hasBought" class="ion-padding">
+    <ion-col class="ion-text-center">
+      <ion-button (click)="add()">
+        اضافه کردن به سبد خرید
+      </ion-button>
+    </ion-col>
   </ion-row>
 
   <!-- <ion-row *ngFor="let track of playlist" (click)="func(track)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">

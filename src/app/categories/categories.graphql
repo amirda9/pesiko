@@ -1,0 +1,17 @@
+query categories{
+  allCategories{
+    edges{
+      node{
+        id
+        title
+        podcastSet {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+}

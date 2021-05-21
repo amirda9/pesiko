@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {USERNAME,AUTHTOKEN} from './constants'
+import {AUTHTOKEN, ID} from './constants'
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {Observable} from 'rxjs';
 
@@ -22,11 +22,11 @@ export class AuthService {
   //   this.authService.setUserId(id);
   // }
 
-  saveUserData(username: string, token: string) {
+  saveUserData(id: string, token: string) {
 
-    localStorage.setItem(USERNAME, username);
+    localStorage.setItem(ID, id);
     localStorage.setItem(AUTHTOKEN, token);
-    this.setusername(username);
+    this.setusername(id);
   }
 
   get isAuthenticated() {
@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem(USERNAME);
+    localStorage.removeItem(ID);
     localStorage.removeItem(AUTHTOKEN);
     this.username = null;
     this._isAuthenticated.next(false);
@@ -48,7 +48,7 @@ export class AuthService {
 
   // 8
   autoLogin() {
-    const username = localStorage.getItem(USERNAME);
+    const username = localStorage.getItem(ID);
     if (username) {
       this.setusername(username);
 

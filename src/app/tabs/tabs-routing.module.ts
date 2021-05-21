@@ -20,6 +20,22 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
+      },
+      {
+        path: 'category',
+        loadChildren: () => import('../category/category.module').then(m => m.CategoryPageModule)
+      },
+      {
+        path: 'cart',
+        loadChildren: () => import('../cart/cart.module').then(m => m.CartPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab3',
         pathMatch: 'full'

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { timer } from 'rxjs';
 import { Subscription } from 'rxjs';
 import { Verify_UserGQL } from 'src/generated/graphql';
-import { USERNAME } from '../constants';
+import { ID,USERNAME } from '../constants';
 
 @Directive({
   selector: '[moveNextByMaxLength]'

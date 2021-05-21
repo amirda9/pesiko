@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { RegisterGQL, RegisterMutation, Req_OtpGQL } from 'src/generated/graphql';
-import { USERNAME } from '../constants';
+import { ID } from '../constants';
 
 @Component({
   selector: 'app-register',
@@ -39,7 +39,7 @@ export class RegisterPage implements OnInit {
         }).subscribe(next=>
           {
             if(next.data !=null){
-              localStorage.setItem(USERNAME,this.phone_no)
+              localStorage.setItem(ID,this.phone_no)
               this.req_otp.mutate({
                 username:this.phone_no
               })

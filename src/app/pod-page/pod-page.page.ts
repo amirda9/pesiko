@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonRange, LoadingController, ModalController } from '@ionic/angular';
 import { map } from 'rxjs/operators';
-import { TracksGQL, TracksQuery } from 'src/generated/graphql';
+import { TracksGQL, TracksQuery, AddGQL} from 'src/generated/graphql';
 import Observable from 'zen-observable';
 import { AudioService } from '../audio.service';
 import { MusicPage } from '../music/music.page';
@@ -24,11 +24,22 @@ export class PodPagePage implements OnInit {
   image:any;
   title:string;
   @ViewChild('range',{static:false}) range: IonRange ;
-  tracks:Observable<TracksQuery ['podcast']['tracks']['edges']>
-  playlist=this.serv.playlist;
+  tracks:Observable<TracksQuery ['podcast']['trackSet']['edges']>;
+  // playlist=this.serv.playlist;
   progress=this.serv.progress;
+  hasBought:boolean;
+  prod_id:string;
   
-  constructor(private trackGQL:TracksGQL,private route: ActivatedRoute, private router: Router , private modalCtrl:ModalController , public serv:AudioService,public loadingController: LoadingController) { }
+  constructor(private trackGQL:TracksGQL,private route: ActivatedRoute, private router: Router , private modalCtrl:ModalController , public serv:AudioService,public loadingController: LoadingController , private addgql:AddGQL) {
+
+    // this.trackGQL.watch({
+    //   ID:"UG9kY2FzdE5vZGU6MQ==",
+    // }).valueChanges.subscribe(res=>{
+    //   console.log(res);
+    //   // this.tracks = res.data.podcast.trackSet.edges;
+    // });
+
+   }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -38,20 +49,17 @@ export class PodPagePage implements OnInit {
     });
     // console.log(this.id);
     this.trackGQL.watch({
-      ID:this.id
-    }
-    ).valueChanges.subscribe(
-      res=>{
-        // console.log(res);
-        this.title = res.data.podcast.title;
-        this.image = res.data.podcast.images.edges[0].node.image;
-        // console.log(this.image)
-      }
-    )
-
+      ID:this.id,}).valueChanges.subscribe(res=>{
+        this.hasBought = res.data.podcast.hasBought;
+        this.prod_id = res.data.podcast.product.id;
+      })
     this.tracks = this.trackGQL.watch({
-      ID:this.id
-    }).valueChanges.pipe(map(res=>res.data.podcast.tracks.edges))
+      ID:this.id,}
+      ).valueChanges.pipe(map(result => result.data.podcast.trackSet.edges));
+
+
+    // console.log(this.id);
+
   }
 
 
@@ -104,6 +112,17 @@ export class PodPagePage implements OnInit {
     
     await modal.present();
     
+  }
+
+
+  add(){
+    // console.log(this.prod_id);
+    this.addgql.mutate({
+      action:"add",
+      ID:this.prod_id
+    }).subscribe(res=>{
+      console.log(res.data.productToBasket.status);
+    })
   }
 }
   

@@ -1,0 +1,31 @@
+ion-content{
+    --ion-background-color:#f2f4ff;
+}
+
+ion-toolbar{
+    --background:#f2f4ff;
+}
+
+ion-input{
+    border:1px solid #aaaaaa;
+    border-radius: 20px 20px 20px 20px;
+    --placeholder-color:#aaaaaa;
+    --background:#f8f7fa;
+    --padding-start:0.5em;
+    height: 3em;
+  }
+
+
+h2 {
+	width: 100%; 
+	text-align: center; 
+	border-bottom: 1px solid #000; 
+	line-height: 0.1em;
+	margin: 10px 0 20px; 
+ } 
+ 
+ h2 span { 
+	 background:#f2f4ff; 
+	 padding:0 10px; 
+
+ }

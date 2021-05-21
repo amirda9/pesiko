@@ -1,0 +1,7 @@
+mutation pay{
+  pay{
+    transaction{
+      token
+    }
+  }
+}

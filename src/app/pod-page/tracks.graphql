@@ -1,14 +1,18 @@
 query tracks($ID:ID!){
 	podcast(id:$ID){
   title
-images{
+  hasBought
+  product{
+  id
+  }
+  images{
       edges{
         node{
           image
         }
       }
     }
-    tracks{
+    trackSet{
       edges{
         node{
           audioFile {

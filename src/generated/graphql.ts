@@ -28,13 +28,639 @@ export type Scalars = {
 
 
 
-/** An enumeration. */
-export enum BaseProfileRoleChoices {
-  /** Customer */
-  Customer = 'CUSTOMER',
-  /** Manager */
-  Manager = 'MANAGER'
-}
+export type Query = {
+  __typename?: 'Query';
+  subscription?: Maybe<SubscriptionNode>;
+  allSubscriptions?: Maybe<SubscriptionNodeConnection>;
+  podcastSubscription?: Maybe<PodcastSubscriptionNode>;
+  allPodcastSubscriptions?: Maybe<PodcastSubscriptionNodeConnection>;
+  podcast?: Maybe<PodcastNode>;
+  allPodcasts?: Maybe<PodcastNodeConnection>;
+  track?: Maybe<TrackNode>;
+  allTracks?: Maybe<TrackNodeConnection>;
+  podcastImage?: Maybe<PodcastImageNode>;
+  allPodcastImages?: Maybe<PodcastImageNodeConnection>;
+  product?: Maybe<ProductNode>;
+  allProducts?: Maybe<ProductNodeConnection>;
+  transaction?: Maybe<TransactionNode>;
+  allTransactions?: Maybe<TransactionNodeConnection>;
+  coupon?: Maybe<CouponNode>;
+  allCoupons?: Maybe<CouponNodeConnection>;
+  basket?: Maybe<BasketNode>;
+  allBaskets?: Maybe<BasketNodeConnection>;
+  currentBasket?: Maybe<BasketNode>;
+  order?: Maybe<OrderNode>;
+  allOrders?: Maybe<OrderNodeConnection>;
+  orderNote?: Maybe<OrderNoteNode>;
+  allOrderNotes?: Maybe<OrderNoteNodeConnection>;
+  user?: Maybe<UserNode>;
+  allUsers?: Maybe<UserNodeConnection>;
+  profile?: Maybe<ProfileNode>;
+  allProfiles?: Maybe<ProfileNodeConnection>;
+  otp?: Maybe<OtpNode>;
+  allOtps?: Maybe<OtpNodeConnection>;
+  category?: Maybe<CategoryNode>;
+  allCategories?: Maybe<CategoryNodeConnection>;
+  image?: Maybe<ImageNode>;
+  allImages?: Maybe<ImageNodeConnection>;
+  file?: Maybe<FileNode>;
+  allFiles?: Maybe<FileNodeConnection>;
+  post?: Maybe<PostNode>;
+  allPosts?: Maybe<PostNodeConnection>;
+};
+
+
+export type QuerySubscriptionArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllSubscriptionsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  startsAt?: Maybe<Scalars['DateTime']>;
+  expiresAt?: Maybe<Scalars['DateTime']>;
+  profile?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryPodcastSubscriptionArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllPodcastSubscriptionsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  subscription?: Maybe<Scalars['ID']>;
+  podcast?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryPodcastArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllPodcastsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type QueryTrackArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllTracksArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type QueryPodcastImageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllPodcastImagesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  isFeatured?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type QueryProductArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllProductsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryTransactionArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllTransactionsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryCouponArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllCouponsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryBasketArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllBasketsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryOrderArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllOrdersArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+  transaction?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryOrderNoteArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllOrderNotesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  order?: Maybe<Scalars['ID']>;
+  message?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryUserArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllUsersArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryProfileArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllProfilesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+  user?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryOtpArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllOtpsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryCategoryArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllCategoriesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryImageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllImagesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryFileArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllFilesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryPostArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryAllPostsArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+/** An object with an ID */
+export type Node = {
+  /** The ID of the object */
+  id: Scalars['ID'];
+};
+
+export type ProfileNode = Node & {
+  __typename?: 'ProfileNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  user: UserNode;
+  role: BaseProfileRoleChoices;
+  status: Scalars['Boolean'];
+  phoneNumber?: Maybe<Scalars['String']>;
+  otpSet: OtpNodeConnection;
+  categorySet: CategoryNodeConnection;
+  imageSet: ImageNodeConnection;
+  fileSet: FileNodeConnection;
+  postSet: PostNodeConnection;
+  productSet: ProductNodeConnection;
+  basketSet: BasketNodeConnection;
+  orderSet: OrderNodeConnection;
+  subscribers: PodcastNodeConnection;
+  podcastSet: PodcastNodeConnection;
+  trackSet: TrackNodeConnection;
+  subscriptionSet: SubscriptionNodeConnection;
+};
+
+
+export type ProfileNodeOtpSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+};
+
+
+export type ProfileNodeCategorySetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ProfileNodeImageSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+export type ProfileNodeFileSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+export type ProfileNodePostSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type ProfileNodeProductSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type ProfileNodeBasketSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+};
+
+
+export type ProfileNodeOrderSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+  transaction?: Maybe<Scalars['ID']>;
+};
+
+
+export type ProfileNodeSubscribersArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type ProfileNodePodcastSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type ProfileNodeTrackSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type ProfileNodeSubscriptionSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  startsAt?: Maybe<Scalars['DateTime']>;
+  expiresAt?: Maybe<Scalars['DateTime']>;
+  profile?: Maybe<Scalars['ID']>;
+};
+
+export type UserNode = Node & {
+  __typename?: 'UserNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  password: Scalars['String'];
+  lastLogin?: Maybe<Scalars['DateTime']>;
+  /** Designates that this user has all permissions without explicitly assigning them. */
+  isSuperuser: Scalars['Boolean'];
+  /** Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. */
+  username: Scalars['String'];
+  firstName: Scalars['String'];
+  lastName: Scalars['String'];
+  email: Scalars['String'];
+  /** Designates whether the user can log into this admin site. */
+  isStaff: Scalars['Boolean'];
+  /** Designates whether this user should be treated as active. Unselect this instead of deleting accounts. */
+  isActive: Scalars['Boolean'];
+  dateJoined: Scalars['DateTime'];
+  profile?: Maybe<ProfileNode>;
+  transactionSet: TransactionNodeConnection;
+};
+
+
+export type UserNodeTransactionSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type TransactionNodeConnection = {
+  __typename?: 'TransactionNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<TransactionNodeEdge>>;
+};
+
+/** The Relay compliant `PageInfo` type, containing data necessary to paginate this connection. */
+export type PageInfo = {
+  __typename?: 'PageInfo';
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean'];
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']>;
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']>;
+};
+
+/** A Relay edge containing a `TransactionNode` and its cursor. */
+export type TransactionNodeEdge = {
+  __typename?: 'TransactionNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<TransactionNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type TransactionNode = Node & {
+  __typename?: 'TransactionNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  account: UserNode;
+  created: Scalars['DateTime'];
+  modified: Scalars['DateTime'];
+  amount: Scalars['Int'];
+  description?: Maybe<Scalars['String']>;
+  token?: Maybe<Scalars['String']>;
+  verified: Scalars['Boolean'];
+  verifiedAt?: Maybe<Scalars['DateTime']>;
+  order?: Maybe<OrderNode>;
+};
+
+export type OrderNode = Node & {
+  __typename?: 'OrderNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  basket?: Maybe<BasketNode>;
+  transaction?: Maybe<TransactionNode>;
+  profile?: Maybe<ProfileNode>;
+  createdAt: Scalars['DateTime'];
+  updatedAt: Scalars['DateTime'];
+  ordernoteSet: OrderNoteNodeConnection;
+  subscriptionSet: SubscriptionNodeConnection;
+};
+
+
+export type OrderNodeOrdernoteSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  order?: Maybe<Scalars['ID']>;
+  message?: Maybe<Scalars['String']>;
+};
+
+
+export type OrderNodeSubscriptionSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  startsAt?: Maybe<Scalars['DateTime']>;
+  expiresAt?: Maybe<Scalars['DateTime']>;
+  profile?: Maybe<Scalars['ID']>;
+};
 
 export type BasketNode = Node & {
   __typename?: 'BasketNode';
@@ -46,7 +672,8 @@ export type BasketNode = Node & {
   products: ProductNodeConnection;
   coupons: CouponNodeConnection;
   profile?: Maybe<ProfileNode>;
-  order?: Maybe<OrderNode>;
+  isPaid: Scalars['Boolean'];
+  orderSet: OrderNodeConnection;
 };
 
 
@@ -56,7 +683,7 @@ export type BasketNodeProductsArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
 };
 
@@ -67,8 +694,65 @@ export type BasketNodeCouponsArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
+};
+
+
+export type BasketNodeOrderSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
+  transaction?: Maybe<Scalars['ID']>;
+};
+
+export type ProductNodeConnection = {
+  __typename?: 'ProductNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<ProductNodeEdge>>;
+};
+
+/** A Relay edge containing a `ProductNode` and its cursor. */
+export type ProductNodeEdge = {
+  __typename?: 'ProductNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<ProductNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type ProductNode = Node & {
+  __typename?: 'ProductNode';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['DateTime'];
+  createdBy?: Maybe<ProfileNode>;
+  /** The ID of the object */
+  id: Scalars['ID'];
+  price: Scalars['Int'];
+  inStock: Scalars['Boolean'];
+  content: Scalars['String'];
+  basketSet: BasketNodeConnection;
+  podcast?: Maybe<PodcastNode>;
+};
+
+
+export type ProductNodeBasketSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  profile?: Maybe<Scalars['ID']>;
 };
 
 export type BasketNodeConnection = {
@@ -84,6 +768,118 @@ export type BasketNodeEdge = {
   __typename?: 'BasketNodeEdge';
   /** The item at the end of the edge */
   node?: Maybe<BasketNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type PodcastNode = Node & {
+  __typename?: 'PodcastNode';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['DateTime'];
+  createdBy?: Maybe<ProfileNode>;
+  /** The ID of the object */
+  id: Scalars['ID'];
+  categories: CategoryNodeConnection;
+  isFreemium: Scalars['Boolean'];
+  product?: Maybe<ProductNode>;
+  images: ImageNodeConnection;
+  isActive: Scalars['Boolean'];
+  content: Scalars['String'];
+  subscribers: ProfileNodeConnection;
+  trackSet: TrackNodeConnection;
+  podcastimageSet: PodcastImageNodeConnection;
+  podcastsubscriptionSet: PodcastSubscriptionNodeConnection;
+  hasBought?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type PodcastNodeCategoriesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type PodcastNodeImagesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+export type PodcastNodeSubscribersArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+  user?: Maybe<Scalars['ID']>;
+};
+
+
+export type PodcastNodeTrackSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type PodcastNodePodcastimageSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  isFeatured?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type PodcastNodePodcastsubscriptionSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  subscription?: Maybe<Scalars['ID']>;
+  podcast?: Maybe<Scalars['ID']>;
+};
+
+export type CategoryNodeConnection = {
+  __typename?: 'CategoryNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<CategoryNodeEdge>>;
+};
+
+/** A Relay edge containing a `CategoryNode` and its cursor. */
+export type CategoryNodeEdge = {
+  __typename?: 'CategoryNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<CategoryNode>;
   /** A cursor for use in pagination */
   cursor: Scalars['String'];
 };
@@ -105,8 +901,8 @@ export type CategoryNode = Node & {
   level: Scalars['Int'];
   children: CategoryNodeConnection;
   postSet: PostNodeConnection;
-  trackSet: TrackNodeConnection;
   podcastSet: PodcastNodeConnection;
+  trackSet: TrackNodeConnection;
 };
 
 
@@ -116,7 +912,7 @@ export type CategoryNodeChildrenArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
 };
 
@@ -127,22 +923,9 @@ export type CategoryNodePostSetArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type CategoryNodeTrackSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
   categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
 };
 
@@ -153,25 +936,375 @@ export type CategoryNodePodcastSetArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
   isActive?: Maybe<Scalars['Boolean']>;
   categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
 };
 
-export type CategoryNodeConnection = {
-  __typename?: 'CategoryNodeConnection';
+
+export type CategoryNodeTrackSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+export type PostNodeConnection = {
+  __typename?: 'PostNodeConnection';
   /** Pagination data for this connection. */
   pageInfo: PageInfo;
   /** Contains the nodes in this connection. */
-  edges: Array<Maybe<CategoryNodeEdge>>;
+  edges: Array<Maybe<PostNodeEdge>>;
 };
 
-/** A Relay edge containing a `CategoryNode` and its cursor. */
-export type CategoryNodeEdge = {
-  __typename?: 'CategoryNodeEdge';
+/** A Relay edge containing a `PostNode` and its cursor. */
+export type PostNodeEdge = {
+  __typename?: 'PostNodeEdge';
   /** The item at the end of the edge */
-  node?: Maybe<CategoryNode>;
+  node?: Maybe<PostNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type PostNode = Node & {
+  __typename?: 'PostNode';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['DateTime'];
+  createdBy?: Maybe<ProfileNode>;
+  /** The ID of the object */
+  id: Scalars['ID'];
+  categories: CategoryNodeConnection;
+  images: ImageNodeConnection;
+  Files: FileNodeConnection;
+  content: Scalars['String'];
+};
+
+
+export type PostNodeCategoriesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+export type PostNodeImagesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+
+export type PostNodeFilesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type ImageNodeConnection = {
+  __typename?: 'ImageNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<ImageNodeEdge>>;
+};
+
+/** A Relay edge containing a `ImageNode` and its cursor. */
+export type ImageNodeEdge = {
+  __typename?: 'ImageNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<ImageNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type ImageNode = Node & {
+  __typename?: 'ImageNode';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['DateTime'];
+  createdBy?: Maybe<ProfileNode>;
+  /** The ID of the object */
+  id: Scalars['ID'];
+  image: Scalars['String'];
+  altText?: Maybe<Scalars['String']>;
+  postSet: PostNodeConnection;
+  podcastSet: PodcastNodeConnection;
+  podcastimageSet: PodcastImageNodeConnection;
+};
+
+
+export type ImageNodePostSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type ImageNodePodcastSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  isActive?: Maybe<Scalars['Boolean']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+
+export type ImageNodePodcastimageSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  isFeatured?: Maybe<Scalars['Boolean']>;
+};
+
+export type PodcastNodeConnection = {
+  __typename?: 'PodcastNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<PodcastNodeEdge>>;
+};
+
+/** A Relay edge containing a `PodcastNode` and its cursor. */
+export type PodcastNodeEdge = {
+  __typename?: 'PodcastNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<PodcastNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type PodcastImageNodeConnection = {
+  __typename?: 'PodcastImageNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<PodcastImageNodeEdge>>;
+};
+
+/** A Relay edge containing a `PodcastImageNode` and its cursor. */
+export type PodcastImageNodeEdge = {
+  __typename?: 'PodcastImageNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<PodcastImageNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type PodcastImageNode = Node & {
+  __typename?: 'PodcastImageNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  podcast: PodcastNode;
+  image: ImageNode;
+  isFeatured: Scalars['Boolean'];
+  order: Scalars['Int'];
+};
+
+export type FileNodeConnection = {
+  __typename?: 'FileNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<FileNodeEdge>>;
+};
+
+/** A Relay edge containing a `FileNode` and its cursor. */
+export type FileNodeEdge = {
+  __typename?: 'FileNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<FileNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type FileNode = Node & {
+  __typename?: 'FileNode';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['DateTime'];
+  createdBy?: Maybe<ProfileNode>;
+  /** The ID of the object */
+  id: Scalars['ID'];
+  file: Scalars['String'];
+  postSet: PostNodeConnection;
+  track?: Maybe<TrackNode>;
+};
+
+
+export type FileNodePostSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+};
+
+export type TrackNode = Node & {
+  __typename?: 'TrackNode';
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['DateTime'];
+  createdBy?: Maybe<ProfileNode>;
+  /** The ID of the object */
+  id: Scalars['ID'];
+  isFreemium: Scalars['Boolean'];
+  audioFile?: Maybe<FileNode>;
+  durationSeconds?: Maybe<Scalars['Int']>;
+  categories: CategoryNodeConnection;
+  isActive: Scalars['Boolean'];
+  podcast?: Maybe<PodcastNode>;
+  order: Scalars['Int'];
+  hasAccess?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type TrackNodeCategoriesArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type TrackNodeConnection = {
+  __typename?: 'TrackNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<TrackNodeEdge>>;
+};
+
+export type SubscriptionNode = Node & {
+  __typename?: 'SubscriptionNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  profile: ProfileNode;
+  createdAt: Scalars['DateTime'];
+  updatedAt: Scalars['DateTime'];
+  startsAt: Scalars['DateTime'];
+  expiresAt: Scalars['DateTime'];
+  isActive: Scalars['Boolean'];
+  order?: Maybe<OrderNode>;
+  podcastsubscriptionSet: PodcastSubscriptionNodeConnection;
+};
+
+
+export type SubscriptionNodePodcastsubscriptionSetArgs = {
+  offset?: Maybe<Scalars['Int']>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
+  subscription?: Maybe<Scalars['ID']>;
+  podcast?: Maybe<Scalars['ID']>;
+};
+
+export type ProfileNodeConnection = {
+  __typename?: 'ProfileNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<ProfileNodeEdge>>;
+};
+
+/** A Relay edge containing a `ProfileNode` and its cursor. */
+export type ProfileNodeEdge = {
+  __typename?: 'ProfileNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<ProfileNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type PodcastSubscriptionNodeConnection = {
+  __typename?: 'PodcastSubscriptionNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<PodcastSubscriptionNodeEdge>>;
+};
+
+/** A Relay edge containing a `PodcastSubscriptionNode` and its cursor. */
+export type PodcastSubscriptionNodeEdge = {
+  __typename?: 'PodcastSubscriptionNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<PodcastSubscriptionNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type PodcastSubscriptionNode = Node & {
+  __typename?: 'PodcastSubscriptionNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  subscription: SubscriptionNode;
+  podcast: PodcastNode;
+};
+
+export type CouponNodeConnection = {
+  __typename?: 'CouponNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<CouponNodeEdge>>;
+};
+
+/** A Relay edge containing a `CouponNode` and its cursor. */
+export type CouponNodeEdge = {
+  __typename?: 'CouponNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<CouponNode>;
   /** A cursor for use in pagination */
   cursor: Scalars['String'];
 };
@@ -194,162 +1327,153 @@ export type CouponNodeBasketSetArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['ID']>;
   profile?: Maybe<Scalars['ID']>;
 };
 
-export type CouponNodeConnection = {
-  __typename?: 'CouponNodeConnection';
+export type OrderNodeConnection = {
+  __typename?: 'OrderNodeConnection';
   /** Pagination data for this connection. */
   pageInfo: PageInfo;
   /** Contains the nodes in this connection. */
-  edges: Array<Maybe<CouponNodeEdge>>;
+  edges: Array<Maybe<OrderNodeEdge>>;
 };
 
-/** A Relay edge containing a `CouponNode` and its cursor. */
-export type CouponNodeEdge = {
-  __typename?: 'CouponNodeEdge';
+/** A Relay edge containing a `OrderNode` and its cursor. */
+export type OrderNodeEdge = {
+  __typename?: 'OrderNodeEdge';
   /** The item at the end of the edge */
-  node?: Maybe<CouponNode>;
+  node?: Maybe<OrderNode>;
   /** A cursor for use in pagination */
   cursor: Scalars['String'];
 };
 
-export type CreateUser = {
-  __typename?: 'CreateUser';
-  user?: Maybe<UserNode>;
+export type OrderNoteNodeConnection = {
+  __typename?: 'OrderNoteNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<OrderNoteNodeEdge>>;
+};
+
+/** A Relay edge containing a `OrderNoteNode` and its cursor. */
+export type OrderNoteNodeEdge = {
+  __typename?: 'OrderNoteNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<OrderNoteNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type OrderNoteNode = Node & {
+  __typename?: 'OrderNoteNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  createdAt: Scalars['DateTime'];
+  updatedAt: Scalars['DateTime'];
+  message?: Maybe<Scalars['String']>;
+  order: OrderNode;
+};
+
+export type SubscriptionNodeConnection = {
+  __typename?: 'SubscriptionNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<SubscriptionNodeEdge>>;
+};
+
+/** A Relay edge containing a `SubscriptionNode` and its cursor. */
+export type SubscriptionNodeEdge = {
+  __typename?: 'SubscriptionNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<SubscriptionNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+/** An enumeration. */
+export enum BaseProfileRoleChoices {
+  /** Customer */
+  Customer = 'CUSTOMER',
+  /** Manager */
+  Manager = 'MANAGER'
+}
+
+export type OtpNodeConnection = {
+  __typename?: 'OtpNodeConnection';
+  /** Pagination data for this connection. */
+  pageInfo: PageInfo;
+  /** Contains the nodes in this connection. */
+  edges: Array<Maybe<OtpNodeEdge>>;
+};
+
+/** A Relay edge containing a `OtpNode` and its cursor. */
+export type OtpNodeEdge = {
+  __typename?: 'OtpNodeEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<OtpNode>;
+  /** A cursor for use in pagination */
+  cursor: Scalars['String'];
+};
+
+export type OtpNode = Node & {
+  __typename?: 'OtpNode';
+  /** The ID of the object */
+  id: Scalars['ID'];
+  message?: Maybe<Scalars['String']>;
+  isValid: Scalars['Boolean'];
   profile?: Maybe<ProfileNode>;
-  token?: Maybe<Scalars['String']>;
-  refreshToken?: Maybe<Scalars['String']>;
 };
 
-
-export type FileNode = Node & {
-  __typename?: 'FileNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  slug: Scalars['String'];
-  createdAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  updatedAt: Scalars['DateTime'];
-  createdBy?: Maybe<ProfileNode>;
-  file: Scalars['String'];
-  postSet: PostNodeConnection;
-  track?: Maybe<TrackNode>;
-};
-
-
-export type FileNodePostSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-export type FileNodeConnection = {
-  __typename?: 'FileNodeConnection';
+export type UserNodeConnection = {
+  __typename?: 'UserNodeConnection';
   /** Pagination data for this connection. */
   pageInfo: PageInfo;
   /** Contains the nodes in this connection. */
-  edges: Array<Maybe<FileNodeEdge>>;
+  edges: Array<Maybe<UserNodeEdge>>;
 };
 
-/** A Relay edge containing a `FileNode` and its cursor. */
-export type FileNodeEdge = {
-  __typename?: 'FileNodeEdge';
+/** A Relay edge containing a `UserNode` and its cursor. */
+export type UserNodeEdge = {
+  __typename?: 'UserNodeEdge';
   /** The item at the end of the edge */
-  node?: Maybe<FileNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-
-export type ImageNode = Node & {
-  __typename?: 'ImageNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  slug: Scalars['String'];
-  createdAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  updatedAt: Scalars['DateTime'];
-  createdBy?: Maybe<ProfileNode>;
-  image: Scalars['String'];
-  altText?: Maybe<Scalars['String']>;
-  postSet: PostNodeConnection;
-  podcastSet: PodcastNodeConnection;
-  podcastimageSet: PodcastImageNodeConnection;
-};
-
-
-export type ImageNodePostSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type ImageNodePodcastSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type ImageNodePodcastimageSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  isFeatured?: Maybe<Scalars['Boolean']>;
-};
-
-export type ImageNodeConnection = {
-  __typename?: 'ImageNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<ImageNodeEdge>>;
-};
-
-/** A Relay edge containing a `ImageNode` and its cursor. */
-export type ImageNodeEdge = {
-  __typename?: 'ImageNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<ImageNode>;
+  node?: Maybe<UserNode>;
   /** A cursor for use in pagination */
   cursor: Scalars['String'];
 };
 
 export type Mutation = {
   __typename?: 'Mutation';
-  /** Obtain JSON Web Token mutation */
+  pay?: Maybe<TransactionMutation>;
+  verifyPayment?: Maybe<VerifyTransactionMutation>;
+  productToBasket?: Maybe<ProductToBasketMutation>;
+  couponToBasket?: Maybe<CouponToBasketMutation>;
   tokenAuth?: Maybe<ObtainJsonWebToken>;
   verifyToken?: Maybe<Verify>;
   refreshToken?: Maybe<Refresh>;
   createUser?: Maybe<CreateUser>;
   verifyUser?: Maybe<VerifyUser>;
   requestOtp?: Maybe<RequestOtp>;
+  profileEdit?: Maybe<ProfileMutationPayload>;
+};
+
+
+export type MutationVerifyPaymentArgs = {
+  status: Scalars['String'];
+  token: Scalars['String'];
+};
+
+
+export type MutationProductToBasketArgs = {
+  action: Scalars['String'];
+  productId: Scalars['ID'];
+};
+
+
+export type MutationCouponToBasketArgs = {
+  action: Scalars['String'];
+  couponTitle: Scalars['String'];
 };
 
 
@@ -385,1007 +1509,49 @@ export type MutationRequestOtpArgs = {
   username: Scalars['String'];
 };
 
-/** An object with an ID */
-export type Node = {
-  /** The ID of the object */
-  id: Scalars['ID'];
+
+export type MutationProfileEditArgs = {
+  input: ProfileMutationInput;
 };
 
-/** Obtain JSON Web Token mutation */
+export type TransactionMutation = {
+  __typename?: 'TransactionMutation';
+  transaction?: Maybe<TransactionNode>;
+};
+
+export type VerifyTransactionMutation = {
+  __typename?: 'VerifyTransactionMutation';
+  transaction?: Maybe<TransactionNode>;
+  status?: Maybe<Scalars['Boolean']>;
+};
+
+export type ProductToBasketMutation = {
+  __typename?: 'ProductToBasketMutation';
+  status?: Maybe<Scalars['Boolean']>;
+  product?: Maybe<ProductNode>;
+  basket?: Maybe<BasketNode>;
+};
+
+export type CouponToBasketMutation = {
+  __typename?: 'CouponToBasketMutation';
+  status?: Maybe<Scalars['Boolean']>;
+  coupon?: Maybe<CouponNode>;
+  basket?: Maybe<BasketNode>;
+};
+
 export type ObtainJsonWebToken = {
   __typename?: 'ObtainJSONWebToken';
   payload: Scalars['GenericScalar'];
   refreshExpiresIn: Scalars['Int'];
+  user?: Maybe<UserNode>;
   token: Scalars['String'];
   refreshToken: Scalars['String'];
 };
 
-export type OrderNode = Node & {
-  __typename?: 'OrderNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  basket?: Maybe<BasketNode>;
-  transaction?: Maybe<TransactionNode>;
-  profile?: Maybe<ProfileNode>;
-  createdAt: Scalars['DateTime'];
-  updatedAt: Scalars['DateTime'];
-  ordernoteSet: OrderNoteNodeConnection;
-  subscriptionSet: SubscriptionNodeConnection;
-};
 
-
-export type OrderNodeOrdernoteSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  order?: Maybe<Scalars['ID']>;
-  message?: Maybe<Scalars['String']>;
-};
-
-
-export type OrderNodeSubscriptionSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  startsAt?: Maybe<Scalars['DateTime']>;
-  expiresAt?: Maybe<Scalars['DateTime']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-export type OrderNodeConnection = {
-  __typename?: 'OrderNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<OrderNodeEdge>>;
-};
-
-/** A Relay edge containing a `OrderNode` and its cursor. */
-export type OrderNodeEdge = {
-  __typename?: 'OrderNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<OrderNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type OrderNoteNode = Node & {
-  __typename?: 'OrderNoteNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  createdAt: Scalars['DateTime'];
-  updatedAt: Scalars['DateTime'];
-  message?: Maybe<Scalars['String']>;
-  order: OrderNode;
-};
-
-export type OrderNoteNodeConnection = {
-  __typename?: 'OrderNoteNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<OrderNoteNodeEdge>>;
-};
-
-/** A Relay edge containing a `OrderNoteNode` and its cursor. */
-export type OrderNoteNodeEdge = {
-  __typename?: 'OrderNoteNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<OrderNoteNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type OtpNode = Node & {
-  __typename?: 'OtpNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  message?: Maybe<Scalars['String']>;
-  isValid: Scalars['Boolean'];
-  profile?: Maybe<ProfileNode>;
-};
-
-export type OtpNodeConnection = {
-  __typename?: 'OtpNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<OtpNodeEdge>>;
-};
-
-/** A Relay edge containing a `OtpNode` and its cursor. */
-export type OtpNodeEdge = {
-  __typename?: 'OtpNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<OtpNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-/** The Relay compliant `PageInfo` type, containing data necessary to paginate this connection. */
-export type PageInfo = {
-  __typename?: 'PageInfo';
-  /** When paginating forwards, are there more items? */
-  hasNextPage: Scalars['Boolean'];
-  /** When paginating backwards, are there more items? */
-  hasPreviousPage: Scalars['Boolean'];
-  /** When paginating backwards, the cursor to continue. */
-  startCursor?: Maybe<Scalars['String']>;
-  /** When paginating forwards, the cursor to continue. */
-  endCursor?: Maybe<Scalars['String']>;
-};
-
-export type PodcastImageNode = Node & {
-  __typename?: 'PodcastImageNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  podcast: PodcastNode;
-  image: ImageNode;
-  isFeatured: Scalars['Boolean'];
-  order: Scalars['Int'];
-};
-
-export type PodcastImageNodeConnection = {
-  __typename?: 'PodcastImageNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<PodcastImageNodeEdge>>;
-};
-
-/** A Relay edge containing a `PodcastImageNode` and its cursor. */
-export type PodcastImageNodeEdge = {
-  __typename?: 'PodcastImageNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<PodcastImageNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type PodcastNode = Node & {
-  __typename?: 'PodcastNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  slug: Scalars['String'];
-  createdAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  updatedAt: Scalars['DateTime'];
-  createdBy?: Maybe<ProfileNode>;
-  categories: CategoryNodeConnection;
-  isFreemium: Scalars['Boolean'];
-  product?: Maybe<ProductNode>;
-  images: ImageNodeConnection;
-  tracks: TrackNodeConnection;
-  isActive: Scalars['Boolean'];
-  content: Scalars['String'];
-  podcastimageSet: PodcastImageNodeConnection;
-  podcasttrackSet: PodcastTrackNodeConnection;
-  podcastsubscriptionSet: PodcastSubscriptionNodeConnection;
-};
-
-
-export type PodcastNodeCategoriesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type PodcastNodeImagesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-
-export type PodcastNodeTracksArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type PodcastNodePodcastimageSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  isFeatured?: Maybe<Scalars['Boolean']>;
-};
-
-
-export type PodcastNodePodcasttrackSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  podcast?: Maybe<Scalars['ID']>;
-};
-
-
-export type PodcastNodePodcastsubscriptionSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  subscription?: Maybe<Scalars['ID']>;
-  podcast?: Maybe<Scalars['ID']>;
-};
-
-export type PodcastNodeConnection = {
-  __typename?: 'PodcastNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<PodcastNodeEdge>>;
-};
-
-/** A Relay edge containing a `PodcastNode` and its cursor. */
-export type PodcastNodeEdge = {
-  __typename?: 'PodcastNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<PodcastNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type PodcastSubscriptionNode = Node & {
-  __typename?: 'PodcastSubscriptionNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  subscription: SubscriptionNode;
-  podcast: PodcastNode;
-};
-
-export type PodcastSubscriptionNodeConnection = {
-  __typename?: 'PodcastSubscriptionNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<PodcastSubscriptionNodeEdge>>;
-};
-
-/** A Relay edge containing a `PodcastSubscriptionNode` and its cursor. */
-export type PodcastSubscriptionNodeEdge = {
-  __typename?: 'PodcastSubscriptionNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<PodcastSubscriptionNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type PodcastTrackNode = Node & {
-  __typename?: 'PodcastTrackNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  podcast: PodcastNode;
-  track: TrackNode;
-  order: Scalars['Int'];
-};
-
-export type PodcastTrackNodeConnection = {
-  __typename?: 'PodcastTrackNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<PodcastTrackNodeEdge>>;
-};
-
-/** A Relay edge containing a `PodcastTrackNode` and its cursor. */
-export type PodcastTrackNodeEdge = {
-  __typename?: 'PodcastTrackNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<PodcastTrackNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type PostNode = Node & {
-  __typename?: 'PostNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  slug: Scalars['String'];
-  createdAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  updatedAt: Scalars['DateTime'];
-  createdBy?: Maybe<ProfileNode>;
-  categories: CategoryNodeConnection;
-  images: ImageNodeConnection;
-  Files: FileNodeConnection;
-  content: Scalars['String'];
-};
-
-
-export type PostNodeCategoriesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type PostNodeImagesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-
-export type PostNodeFilesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-export type PostNodeConnection = {
-  __typename?: 'PostNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<PostNodeEdge>>;
-};
-
-/** A Relay edge containing a `PostNode` and its cursor. */
-export type PostNodeEdge = {
-  __typename?: 'PostNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<PostNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type ProductNode = Node & {
-  __typename?: 'ProductNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  slug: Scalars['String'];
-  createdAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  updatedAt: Scalars['DateTime'];
-  createdBy?: Maybe<ProfileNode>;
-  price: Scalars['Int'];
-  inStock: Scalars['Boolean'];
-  content: Scalars['String'];
-  basketSet: BasketNodeConnection;
-  podcastSet: PodcastNodeConnection;
-};
-
-
-export type ProductNodeBasketSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-
-export type ProductNodePodcastSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-export type ProductNodeConnection = {
-  __typename?: 'ProductNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<ProductNodeEdge>>;
-};
-
-/** A Relay edge containing a `ProductNode` and its cursor. */
-export type ProductNodeEdge = {
-  __typename?: 'ProductNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<ProductNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type ProfileNode = Node & {
-  __typename?: 'ProfileNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  user: UserNode;
-  role: BaseProfileRoleChoices;
-  status: Scalars['Boolean'];
-  phoneNumber?: Maybe<Scalars['String']>;
-  otpSet: OtpNodeConnection;
-  categorySet: CategoryNodeConnection;
-  imageSet: ImageNodeConnection;
-  fileSet: FileNodeConnection;
-  postSet: PostNodeConnection;
-  productSet: ProductNodeConnection;
-  transactionSet: TransactionNodeConnection;
-  basketSet: BasketNodeConnection;
-  orderSet: OrderNodeConnection;
-  trackSet: TrackNodeConnection;
-  podcastSet: PodcastNodeConnection;
-  subscriptionSet: SubscriptionNodeConnection;
-};
-
-
-export type ProfileNodeOtpSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-
-export type ProfileNodeCategorySetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type ProfileNodeImageSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-
-export type ProfileNodeFileSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-
-export type ProfileNodePostSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type ProfileNodeProductSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type ProfileNodeTransactionSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  transactionId?: Maybe<Scalars['String']>;
-  transactionToken?: Maybe<Scalars['String']>;
-  profile?: Maybe<Scalars['ID']>;
-  status?: Maybe<Scalars['String']>;
-};
-
-
-export type ProfileNodeBasketSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-
-export type ProfileNodeOrderSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-  transaction?: Maybe<Scalars['ID']>;
-};
-
-
-export type ProfileNodeTrackSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type ProfileNodePodcastSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type ProfileNodeSubscriptionSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  startsAt?: Maybe<Scalars['DateTime']>;
-  expiresAt?: Maybe<Scalars['DateTime']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-export type ProfileNodeConnection = {
-  __typename?: 'ProfileNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<ProfileNodeEdge>>;
-};
-
-/** A Relay edge containing a `ProfileNode` and its cursor. */
-export type ProfileNodeEdge = {
-  __typename?: 'ProfileNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<ProfileNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type Query = {
-  __typename?: 'Query';
-  subscription?: Maybe<SubscriptionNode>;
-  allSubscriptions?: Maybe<SubscriptionNodeConnection>;
-  podcastSubscription?: Maybe<PodcastSubscriptionNode>;
-  allPodcastSubscriptions?: Maybe<PodcastSubscriptionNodeConnection>;
-  podcast?: Maybe<PodcastNode>;
-  allPodcasts?: Maybe<PodcastNodeConnection>;
-  track?: Maybe<TrackNode>;
-  allTracks?: Maybe<TrackNodeConnection>;
-  podcastImage?: Maybe<PodcastImageNode>;
-  allPodcastImages?: Maybe<PodcastImageNodeConnection>;
-  podcastTrack?: Maybe<PodcastTrackNode>;
-  allPodcastTracks?: Maybe<PodcastTrackNodeConnection>;
-  product?: Maybe<ProductNode>;
-  allProducts?: Maybe<ProductNodeConnection>;
-  transaction?: Maybe<TransactionNode>;
-  allTransactions?: Maybe<TransactionNodeConnection>;
-  coupon?: Maybe<CouponNode>;
-  allCoupons?: Maybe<CouponNodeConnection>;
-  basket?: Maybe<BasketNode>;
-  allBaskets?: Maybe<BasketNodeConnection>;
-  order?: Maybe<OrderNode>;
-  allOrders?: Maybe<OrderNodeConnection>;
-  orderNote?: Maybe<OrderNoteNode>;
-  allOrderNotes?: Maybe<OrderNoteNodeConnection>;
-  user?: Maybe<UserNode>;
-  allUsers?: Maybe<UserNodeConnection>;
-  profile?: Maybe<ProfileNode>;
-  allProfiles?: Maybe<ProfileNodeConnection>;
-  otp?: Maybe<OtpNode>;
-  allOtps?: Maybe<OtpNodeConnection>;
-  category?: Maybe<CategoryNode>;
-  allCategories?: Maybe<CategoryNodeConnection>;
-  image?: Maybe<ImageNode>;
-  allImages?: Maybe<ImageNodeConnection>;
-  file?: Maybe<FileNode>;
-  allFiles?: Maybe<FileNodeConnection>;
-  post?: Maybe<PostNode>;
-  allPosts?: Maybe<PostNodeConnection>;
-};
-
-
-export type QuerySubscriptionArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllSubscriptionsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  startsAt?: Maybe<Scalars['DateTime']>;
-  expiresAt?: Maybe<Scalars['DateTime']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryPodcastSubscriptionArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllPodcastSubscriptionsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  subscription?: Maybe<Scalars['ID']>;
-  podcast?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryPodcastArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllPodcastsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type QueryTrackArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllTracksArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type QueryPodcastImageArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllPodcastImagesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  isFeatured?: Maybe<Scalars['Boolean']>;
-};
-
-
-export type QueryPodcastTrackArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllPodcastTracksArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  podcast?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryProductArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllProductsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryTransactionArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllTransactionsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  transactionId?: Maybe<Scalars['String']>;
-  transactionToken?: Maybe<Scalars['String']>;
-  profile?: Maybe<Scalars['ID']>;
-  status?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryCouponArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllCouponsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryBasketArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllBasketsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryOrderArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllOrdersArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-  transaction?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryOrderNoteArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllOrderNotesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  order?: Maybe<Scalars['ID']>;
-  message?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryUserArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllUsersArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryProfileArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllProfilesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  phoneNumber?: Maybe<Scalars['String']>;
-  user?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryOtpArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllOtpsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  profile?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryCategoryArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllCategoriesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryImageArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllImagesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryFileArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllFilesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryPostArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryAllPostsArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
+export type Verify = {
+  __typename?: 'Verify';
+  payload: Scalars['GenericScalar'];
 };
 
 export type Refresh = {
@@ -1396,163 +1562,44 @@ export type Refresh = {
   refreshToken: Scalars['String'];
 };
 
+export type CreateUser = {
+  __typename?: 'CreateUser';
+  user?: Maybe<UserNode>;
+  profile?: Maybe<ProfileNode>;
+  token?: Maybe<Scalars['String']>;
+  refreshToken?: Maybe<Scalars['String']>;
+};
+
+export type VerifyUser = {
+  __typename?: 'VerifyUser';
+  status?: Maybe<Scalars['String']>;
+};
+
 export type RequestOtp = {
   __typename?: 'RequestOTP';
   status?: Maybe<Scalars['String']>;
 };
 
-/** An enumeration. */
-export enum ShopTransactionStatusChoices {
-  /** Waiting For Payment */
-  WaitingForPayment = 'WAITING_FOR_PAYMENT',
-  /** Paid */
-  Paid = 'PAID',
-  /** Cancelled */
-  Cancelled = 'CANCELLED'
-}
-
-export type SubscriptionNode = Node & {
-  __typename?: 'SubscriptionNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  profile: ProfileNode;
-  createdAt: Scalars['DateTime'];
-  updatedAt: Scalars['DateTime'];
-  startsAt: Scalars['DateTime'];
-  expiresAt: Scalars['DateTime'];
-  isActive: Scalars['Boolean'];
-  order?: Maybe<OrderNode>;
-  podcastsubscriptionSet: PodcastSubscriptionNodeConnection;
-};
-
-
-export type SubscriptionNodePodcastsubscriptionSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  subscription?: Maybe<Scalars['ID']>;
-  podcast?: Maybe<Scalars['ID']>;
-};
-
-export type SubscriptionNodeConnection = {
-  __typename?: 'SubscriptionNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<SubscriptionNodeEdge>>;
-};
-
-/** A Relay edge containing a `SubscriptionNode` and its cursor. */
-export type SubscriptionNodeEdge = {
-  __typename?: 'SubscriptionNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<SubscriptionNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type TrackNode = Node & {
-  __typename?: 'TrackNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  slug: Scalars['String'];
-  createdAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
-  updatedAt: Scalars['DateTime'];
-  createdBy?: Maybe<ProfileNode>;
-  isFreemium: Scalars['Boolean'];
-  audioFile?: Maybe<FileNode>;
-  durationSeconds?: Maybe<Scalars['Int']>;
-  categories: CategoryNodeConnection;
-  isActive: Scalars['Boolean'];
-  podcastSet: PodcastNodeConnection;
-  podcasttrackSet: PodcastTrackNodeConnection;
-};
-
-
-export type TrackNodeCategoriesArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-export type TrackNodePodcastSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
-  isActive?: Maybe<Scalars['Boolean']>;
-  categories?: Maybe<Array<Maybe<Scalars['ID']>>>;
-};
-
-
-export type TrackNodePodcasttrackSetArgs = {
-  offset?: Maybe<Scalars['Int']>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Float']>;
-  podcast?: Maybe<Scalars['ID']>;
-};
-
-/** A Relay edge containing a `UserNode` and its cursor. */
-export type UserNodeEdge = {
-  __typename?: 'UserNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<UserNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
-
-export type TransactionNodeConnection = {
-  __typename?: 'TransactionNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<TransactionNodeEdge>>;
-};
-
-export type TrackNodeConnection = {
-  __typename?: 'TrackNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<TrackNodeEdge>>;
-};
-
-export type TransactionNode = Node & {
-  __typename?: 'TransactionNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  createdAt: Scalars['DateTime'];
-  updatedAt: Scalars['DateTime'];
-  amount: Scalars['Int'];
-  status: ShopTransactionStatusChoices;
-  transactionId?: Maybe<Scalars['String']>;
-  transactionToken?: Maybe<Scalars['String']>;
+export type ProfileMutationPayload = {
+  __typename?: 'profileMutationPayload';
   profile?: Maybe<ProfileNode>;
-  order?: Maybe<OrderNode>;
+  errors?: Maybe<Array<Maybe<ErrorType>>>;
+  clientMutationId?: Maybe<Scalars['String']>;
 };
 
-export type UserNodeConnection = {
-  __typename?: 'UserNodeConnection';
-  /** Pagination data for this connection. */
-  pageInfo: PageInfo;
-  /** Contains the nodes in this connection. */
-  edges: Array<Maybe<UserNodeEdge>>;
+export type ErrorType = {
+  __typename?: 'ErrorType';
+  field: Scalars['String'];
+  messages: Array<Scalars['String']>;
+};
+
+export type ProfileMutationInput = {
+  user: Scalars['ID'];
+  role: Scalars['String'];
+  status?: Maybe<Scalars['Boolean']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  clientMutationId?: Maybe<Scalars['String']>;
 };
 
 /** A Relay edge containing a `TrackNode` and its cursor. */
@@ -1564,45 +1611,90 @@ export type TrackNodeEdge = {
   cursor: Scalars['String'];
 };
 
-export type UserNode = Node & {
-  __typename?: 'UserNode';
-  /** The ID of the object */
-  id: Scalars['ID'];
-  password: Scalars['String'];
-  lastLogin?: Maybe<Scalars['DateTime']>;
-  /** Designates that this user has all permissions without explicitly assigning them. */
-  isSuperuser: Scalars['Boolean'];
-  /** Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. */
-  username: Scalars['String'];
-  firstName: Scalars['String'];
-  lastName: Scalars['String'];
-  email: Scalars['String'];
-  /** Designates whether the user can log into this admin site. */
-  isStaff: Scalars['Boolean'];
-  /** Designates whether this user should be treated as active. Unselect this instead of deleting accounts. */
-  isActive: Scalars['Boolean'];
-  dateJoined: Scalars['DateTime'];
-  profile?: Maybe<ProfileNode>;
-};
+export type BasketQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type VerifyUser = {
-  __typename?: 'VerifyUser';
-  status?: Maybe<Scalars['String']>;
-};
 
-/** A Relay edge containing a `TransactionNode` and its cursor. */
-export type TransactionNodeEdge = {
-  __typename?: 'TransactionNodeEdge';
-  /** The item at the end of the edge */
-  node?: Maybe<TransactionNode>;
-  /** A cursor for use in pagination */
-  cursor: Scalars['String'];
-};
+export type BasketQuery = (
+  { __typename?: 'Query' }
+  & { currentBasket?: Maybe<(
+    { __typename?: 'BasketNode' }
+    & Pick<BasketNode, 'totalAmount' | 'isPaid'>
+    & { products: (
+      { __typename?: 'ProductNodeConnection' }
+      & { edges: Array<Maybe<(
+        { __typename?: 'ProductNodeEdge' }
+        & { node?: Maybe<(
+          { __typename?: 'ProductNode' }
+          & Pick<ProductNode, 'title' | 'id'>
+        )> }
+      )>> }
+    ) }
+  )> }
+);
 
-export type Verify = {
-  __typename?: 'Verify';
-  payload: Scalars['GenericScalar'];
-};
+export type PayMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PayMutation = (
+  { __typename?: 'Mutation' }
+  & { pay?: Maybe<(
+    { __typename?: 'TransactionMutation' }
+    & { transaction?: Maybe<(
+      { __typename?: 'TransactionNode' }
+      & Pick<TransactionNode, 'token'>
+    )> }
+  )> }
+);
+
+export type CategoriesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CategoriesQuery = (
+  { __typename?: 'Query' }
+  & { allCategories?: Maybe<(
+    { __typename?: 'CategoryNodeConnection' }
+    & { edges: Array<Maybe<(
+      { __typename?: 'CategoryNodeEdge' }
+      & { node?: Maybe<(
+        { __typename?: 'CategoryNode' }
+        & Pick<CategoryNode, 'id' | 'title'>
+        & { podcastSet: (
+          { __typename?: 'PodcastNodeConnection' }
+          & { edges: Array<Maybe<(
+            { __typename?: 'PodcastNodeEdge' }
+            & { node?: Maybe<(
+              { __typename?: 'PodcastNode' }
+              & Pick<PodcastNode, 'id'>
+            )> }
+          )>> }
+        ) }
+      )> }
+    )>> }
+  )> }
+);
+
+export type CategoryQueryVariables = Exact<{
+  ID: Scalars['ID'];
+}>;
+
+
+export type CategoryQuery = (
+  { __typename?: 'Query' }
+  & { category?: Maybe<(
+    { __typename?: 'CategoryNode' }
+    & Pick<CategoryNode, 'title'>
+    & { podcastSet: (
+      { __typename?: 'PodcastNodeConnection' }
+      & { edges: Array<Maybe<(
+        { __typename?: 'PodcastNodeEdge' }
+        & { node?: Maybe<(
+          { __typename?: 'PodcastNode' }
+          & Pick<PodcastNode, 'title' | 'content' | 'id'>
+        )> }
+      )>> }
+    ) }
+  )> }
+);
 
 export type LoginMutationVariables = Exact<{
   username: Scalars['String'];
@@ -1615,6 +1707,27 @@ export type LoginMutation = (
   & { tokenAuth?: Maybe<(
     { __typename?: 'ObtainJSONWebToken' }
     & Pick<ObtainJsonWebToken, 'token' | 'payload'>
+    & { user?: Maybe<(
+      { __typename?: 'UserNode' }
+      & { profile?: Maybe<(
+        { __typename?: 'ProfileNode' }
+        & Pick<ProfileNode, 'id'>
+      )> }
+    )> }
+  )> }
+);
+
+export type AddMutationVariables = Exact<{
+  action: Scalars['String'];
+  ID: Scalars['ID'];
+}>;
+
+
+export type AddMutation = (
+  { __typename?: 'Mutation' }
+  & { productToBasket?: Maybe<(
+    { __typename?: 'ProductToBasketMutation' }
+    & Pick<ProductToBasketMutation, 'status'>
   )> }
 );
 
@@ -1627,8 +1740,11 @@ export type TracksQuery = (
   { __typename?: 'Query' }
   & { podcast?: Maybe<(
     { __typename?: 'PodcastNode' }
-    & Pick<PodcastNode, 'title'>
-    & { images: (
+    & Pick<PodcastNode, 'title' | 'hasBought'>
+    & { product?: Maybe<(
+      { __typename?: 'ProductNode' }
+      & Pick<ProductNode, 'id'>
+    )>, images: (
       { __typename?: 'ImageNodeConnection' }
       & { edges: Array<Maybe<(
         { __typename?: 'ImageNodeEdge' }
@@ -1637,7 +1753,7 @@ export type TracksQuery = (
           & Pick<ImageNode, 'image'>
         )> }
       )>> }
-    ), tracks: (
+    ), trackSet: (
       { __typename?: 'TrackNodeConnection' }
       & { edges: Array<Maybe<(
         { __typename?: 'TrackNodeEdge' }
@@ -1670,6 +1786,41 @@ export type PostQuery = (
         & { node?: Maybe<(
           { __typename?: 'ImageNode' }
           & Pick<ImageNode, 'image'>
+        )> }
+      )>> }
+    ) }
+  )> }
+);
+
+export type ProfileQueryVariables = Exact<{
+  ID: Scalars['ID'];
+}>;
+
+
+export type ProfileQuery = (
+  { __typename?: 'Query' }
+  & { profile?: Maybe<(
+    { __typename?: 'ProfileNode' }
+    & Pick<ProfileNode, 'phoneNumber'>
+    & { user: (
+      { __typename?: 'UserNode' }
+      & { transactionSet: (
+        { __typename?: 'TransactionNodeConnection' }
+        & { edges: Array<Maybe<(
+          { __typename?: 'TransactionNodeEdge' }
+          & { node?: Maybe<(
+            { __typename?: 'TransactionNode' }
+            & Pick<TransactionNode, 'amount' | 'created'>
+          )> }
+        )>> }
+      ) }
+    ), podcastSet: (
+      { __typename?: 'PodcastNodeConnection' }
+      & { edges: Array<Maybe<(
+        { __typename?: 'PodcastNodeEdge' }
+        & { node?: Maybe<(
+          { __typename?: 'PodcastNode' }
+          & Pick<PodcastNode, 'id' | 'title' | 'hasBought'>
         )> }
       )>> }
     ) }
@@ -1768,11 +1919,120 @@ export type Verify_UserMutation = (
   )> }
 );
 
+export const BasketDocument = gql`
+    query basket {
+  currentBasket {
+    totalAmount
+    isPaid
+    products {
+      edges {
+        node {
+          title
+          id
+        }
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class BasketGQL extends Apollo.Query<BasketQuery, BasketQueryVariables> {
+    document = BasketDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const PayDocument = gql`
+    mutation pay {
+  pay {
+    transaction {
+      token
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class PayGQL extends Apollo.Mutation<PayMutation, PayMutationVariables> {
+    document = PayDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const CategoriesDocument = gql`
+    query categories {
+  allCategories {
+    edges {
+      node {
+        id
+        title
+        podcastSet {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CategoriesGQL extends Apollo.Query<CategoriesQuery, CategoriesQueryVariables> {
+    document = CategoriesDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const CategoryDocument = gql`
+    query category($ID: ID!) {
+  category(id: $ID) {
+    title
+    podcastSet {
+      edges {
+        node {
+          title
+          content
+          id
+        }
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class CategoryGQL extends Apollo.Query<CategoryQuery, CategoryQueryVariables> {
+    document = CategoryDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const LoginDocument = gql`
     mutation login($username: String!, $password: String!) {
   tokenAuth(username: $username, password: $password) {
     token
     payload
+    user {
+      profile {
+        id
+      }
+    }
   }
 }
     `;
@@ -1787,10 +2047,32 @@ export const LoginDocument = gql`
       super(apollo);
     }
   }
+export const AddDocument = gql`
+    mutation add($action: String!, $ID: ID!) {
+  productToBasket(action: $action, productId: $ID) {
+    status
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class AddGQL extends Apollo.Mutation<AddMutation, AddMutationVariables> {
+    document = AddDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const TracksDocument = gql`
     query tracks($ID: ID!) {
   podcast(id: $ID) {
     title
+    hasBought
+    product {
+      id
+    }
     images {
       edges {
         node {
@@ -1798,7 +2080,7 @@ export const TracksDocument = gql`
         }
       }
     }
-    tracks {
+    trackSet {
       edges {
         node {
           audioFile {
@@ -1843,6 +2125,43 @@ export const PostDocument = gql`
   })
   export class PostGQL extends Apollo.Query<PostQuery, PostQueryVariables> {
     document = PostDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const ProfileDocument = gql`
+    query profile($ID: ID!) {
+  profile(id: $ID) {
+    phoneNumber
+    user {
+      transactionSet {
+        edges {
+          node {
+            amount
+            created
+          }
+        }
+      }
+    }
+    podcastSet {
+      edges {
+        node {
+          id
+          title
+          hasBought
+        }
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class ProfileGQL extends Apollo.Query<ProfileQuery, ProfileQueryVariables> {
+    document = ProfileDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);

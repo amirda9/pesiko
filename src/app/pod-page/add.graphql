@@ -1,0 +1,5 @@
+mutation add($action:String!,$ID:ID!){
+  productToBasket(action:$action,productId:$ID){
+    status
+  }
+}

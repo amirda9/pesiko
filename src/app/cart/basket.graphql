@@ -1,0 +1,14 @@
+query basket{
+  currentBasket{
+    totalAmount
+    isPaid
+    products{
+      edges{
+        node{
+          title
+          id
+        }
+      }
+    }
+  }
+}

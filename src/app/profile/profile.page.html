@@ -1,0 +1,111 @@
+<ion-header>
+
+  <!-- <div class="img_conn" style=" background-color:#c7ffd8;"></div> -->
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="shop()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title style="font-style: bold; font-size: 19pt;">پروفایل</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="ion-padding-top">
+    <ion-col class="ion-text-center">
+      <img style="height: 10em;" src="../../assets/account.png">
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-label style="font-size: 1.2em; font-style: bold;">
+      {{phone_no}}
+    </ion-label>
+    </ion-col>
+  </ion-row>
+
+
+  <!-- <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-button (click)="logout()">
+      
+      </ion-button>
+    </ion-col>
+  </ion-row> -->
+
+
+  <!-- <ion-row class="ion-padding-horizontal" style="padding-top: 1.5em;">
+    <ion-col>
+      <h2 style="--ion-background-color: #f6f6f6;"><span>پادکست های من</span></h2>
+    </ion-col>
+  </ion-row> -->
+  <ion-row
+    class="ion-justify-content-center ion-padding-horizontal ion-padding-top"
+  >
+    <ion-col class="ion-no-padding" size="12" size-lg="8">
+      <ion-segment  >
+        <ion-segment-button (click)="segmentChanged(0)">
+          <ion-label>پادکست ها</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="segmentChanged(1)">
+          <ion-label>تغییر رمز</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="segmentChanged(2)">
+          <ion-label>تراکنش ها</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+  </ion-row>
+  <div [ngSwitch]="status">
+  <div *ngSwitchCase="0">
+<div *ngFor="let pod of pods | async">
+  <ion-card (click)="play(pod.node.id)" *ngIf="pod.node.hasBought">
+  <ion-row  class="ion-padding-horizontal">
+    <ion-col size="9">
+      <h4>
+    {{pod.node.title}}
+  </h4>
+  </ion-col>
+  <ion-col size="3">
+    <ion-button>
+      <ion-icon name="musical-notes-outline"></ion-icon>
+  </ion-button>
+  </ion-col>
+  </ion-row>
+</ion-card>
+</div>
+</div>
+
+
+<div *ngSwitchCase="2">
+  <div *ngFor="let item of trans | async">
+    <ion-card >
+    <ion-row  class="ion-padding-horizontal">
+      <ion-col size="9">
+        <h4>
+      {{item.node.amount}}
+    </h4>
+    </ion-col>
+    <ion-col size="3">
+      <ion-button>
+        <ion-icon name="card-outline"></ion-icon>
+    </ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-card>
+  </div>
+  </div>
+
+
+</div>
+</ion-content>

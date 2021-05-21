@@ -1,0 +1,14 @@
+query category($ID:ID!){
+  category(id:$ID){
+  title
+    podcastSet{
+      edges{
+        node {
+          title
+          content
+          id
+        }
+      }
+    }
+  }
+}

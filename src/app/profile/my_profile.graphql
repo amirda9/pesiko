@@ -1,0 +1,24 @@
+query profile($ID:ID!){
+  profile(id:$ID){
+    phoneNumber
+    user{
+      transactionSet{
+        edges{
+          node{
+            amount
+            created
+          }
+        }
+      }
+    }
+    podcastSet{
+      edges{
+        node { 
+          id
+          title
+          hasBought
+        }
+      } 
+    }
+  }
+}

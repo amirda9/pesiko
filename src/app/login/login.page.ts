@@ -15,7 +15,6 @@ export class LoginPage implements OnInit {
   id :string ;
   pass :string;
   token:any;
-  username:any;
   login: LoginMutation['tokenAuth'];
   is_TextFieldType:boolean=false;
   constructor(public navCtrl: NavController,private alertcontroller:AlertController ,private authService: AuthService, private loginGQL:LoginGQL , private router:Router,public loadingcontroller:LoadingController) { 
@@ -27,24 +26,24 @@ export class LoginPage implements OnInit {
   }
 
   async confirm(){
+    localStorage.setItem(USERNAME,this.id);
     const loading = await this.loadingcontroller.create({
       message: 'در حال بارگزاری ...'
       });
       loading.present();
       this.loginGQL.mutate({
         username:this.id,
-        password:this.pass
-  
+        password:this.pass,
       }).subscribe(next=>
         {
           if(next.data.tokenAuth.token !=null){
             this.login_bool = true;
             this.token = next.data.tokenAuth.token;
-            let a = next.data.tokenAuth.payload;
+            let a = next.data.tokenAuth.user.profile.id;
             let b = JSON.stringify(a);
             let c = JSON.parse(b);
-            this.username = c.username ;
-            this.authService.saveUserData(this.username,this.token);
+            this.id = b ;
+            this.authService.saveUserData(this.id,this.token);
             // console.log(localStorage.getItem('AUTHTOKEN'));
             loading.dismiss()
             this.router.navigate(['/tabs/tab3']);

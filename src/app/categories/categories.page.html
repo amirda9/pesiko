@@ -1,0 +1,29 @@
+<!-- <ion-header> -->
+  <ion-toolbar>
+    <ion-title style="font-weight: bold; font-size: 19pt;" class="ion-text-center">موضوعات</ion-title>
+  </ion-toolbar>
+<!-- </ion-header> -->
+
+<ion-content>
+
+  <ion-row class="ion-padding">
+    <ion-col class="ion-text-center">
+      <h5>
+        یکی از موضوعات زیر را انتخاب کنید
+      </h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-list class="ion-padding-horizontal">
+    <ion-item *ngFor="let item of items | async" (click)="show(item.node.id)">
+    <ion-col size="10">
+      {{ item.node.title }}
+    </ion-col>
+    <ion-col size="2">
+    <ion-button color="primary" fill="clear">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </ion-col>
+  </ion-item>
+  </ion-list>
+</ion-content>

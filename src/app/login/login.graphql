@@ -4,5 +4,10 @@ mutation login($username:String!,$password:String!)
   {
     token
     payload
+    user{
+      profile{
+        id
+      }
+    }
   }
 }
