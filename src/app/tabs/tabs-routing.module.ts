@@ -36,6 +36,14 @@ const routes: Routes = [
         loadChildren: () => import('../cart/cart.module').then(m => m.CartPageModule)
       },
       {
+        path: 'series',
+        loadChildren: () => import('../series/series.module').then(m => m.SeriesPageModule)
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab3',
         pathMatch: 'full'

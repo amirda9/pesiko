@@ -1,0 +1,12 @@
+query allseries{
+  allSerials{
+    edges{
+      node{
+        title
+        content
+        description
+        id
+      }
+    }
+  }
+}

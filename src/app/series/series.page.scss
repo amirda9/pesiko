@@ -1,0 +1,32 @@
+ion-content{
+    --ion-background-color:#f2f4ff;
+}
+
+ion-toolbar{
+    --background: #f2f4ff;
+}
+
+ion-button{
+    border-radius: 10px;
+    height:90%;
+    width:90%;
+    --background-hover:black;
+}
+
+// ion-grid{
+//     height:100%;
+// }
+// ion-row{
+//     height:25%;
+// }
+
+hr {
+    display: block;
+    margin-top: 0;
+    // margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    // border-style: inset;
+    border-width: 2px;
+    background-color:#006ca6;
+  }

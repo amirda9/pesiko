@@ -24,11 +24,14 @@ export class PodPagePage implements OnInit {
   image:any;
   title:string;
   @ViewChild('range',{static:false}) range: IonRange ;
-  tracks:Observable<TracksQuery ['podcast']['trackSet']['edges']>;
+  // tracks:Observable<TracksQuery ['podcast']['trackSet']['edges']>;
+  tracks:any;
   // playlist=this.serv.playlist;
   progress=this.serv.progress;
   hasBought:boolean;
   prod_id:string;
+
+  empty:boolean=false;
   
   constructor(private trackGQL:TracksGQL,private route: ActivatedRoute, private router: Router , private modalCtrl:ModalController , public serv:AudioService,public loadingController: LoadingController , private addgql:AddGQL) {
 
@@ -38,25 +41,36 @@ export class PodPagePage implements OnInit {
     //   console.log(res);
     //   // this.tracks = res.data.podcast.trackSet.edges;
     // });
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.id = this.router.getCurrentNavigation().extras.state.id;
+        console.log(this.id)
+      }
+    });
+
+    // console.log(this.id)
 
    }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.id = this.router.getCurrentNavigation().extras.state.id;
-      }
-    });
-    // console.log(this.id);
+    
     this.trackGQL.watch({
       ID:this.id,}).valueChanges.subscribe(res=>{
         this.hasBought = res.data.podcast.hasBought;
         this.prod_id = res.data.podcast.product.id;
+        if(res.data.podcast.trackSet.edges.length > 0){
+          this.tracks = this.trackGQL.watch({
+            ID:this.id,}
+            ).valueChanges.pipe(map(result => result.data.podcast.trackSet.edges));     
+            console.log(res.data.podcast.trackSet.edges) 
+        }
+        else{
+          this.empty = true;
+          console.log("its empty")
+        }
       })
-    this.tracks = this.trackGQL.watch({
-      ID:this.id,}
-      ).valueChanges.pipe(map(result => result.data.podcast.trackSet.edges));
-
+    
+    // console.log(this.id);
 
     // console.log(this.id);
 
@@ -95,20 +109,11 @@ export class PodPagePage implements OnInit {
 
   async openModal(audio){
 
-    // let data=this.serv.track;
-    // this.serv.track=this.activeTrack;
     const modal = await this.modalCtrl.create({
       component:MusicPage,
       componentProps: { 
-        // costum_id:this.activeTrack,
-        // text:'amir',
-        // amir :{
-        //   name:'amir',
-        //   path:'https://mizanscene.arvanvod.com/A8LXoP4qBw/eap2aKkg95/origin_Z5vR0tk6pUuROiHXtkoGl84zj0M86XPhrZiwT4lK.mp4'
-        // } 
       }
     });
-    // console.log(this.serv.name)
     
     await modal.present();
     
@@ -122,6 +127,7 @@ export class PodPagePage implements OnInit {
       ID:this.prod_id
     }).subscribe(res=>{
       console.log(res.data.productToBasket.status);
+      this.router.navigate(['/tabs/cart'])
     })
   }
 }

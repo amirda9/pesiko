@@ -7,7 +7,7 @@
 <ion-content class="ion-text-center">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button routerLink="/tabs/tab1" routerDirection="back">
+      <ion-button routerLink="/tabs/series" routerDirection="back">
         <ion-icon name="chevron-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
       <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
     </ion-buttons> -->
     <ion-title style="font-weight: bold; font-size: 19pt;" class="ion-text-center">
-      پادکست
+      سریال
     </ion-title>
   </ion-toolbar>
 <ion-grid>
@@ -53,34 +53,31 @@
     </ion-col>
     <ion-col size="7">
       <!-- <img src="http://pesiko.liara.run/mediafiles/{{image}}" style="border-radius:5%; height:100%; width: 100%;"> -->
-      <img src="../../assets/blog.webp" style="border-radius:5%; height:100%; width: 100%;">
+      <img src="../../assets/series.jpg" style="border-radius:5%; height:100%; width: 100%;">
     </ion-col>
   </ion-row>
   
   <div *ngIf="hasBought" class="ion-padding-top">
-  <ion-row *ngFor="let track of tracks | async" (click)="func(track.node.audioFile.file)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
-    <app-podcast style=" width: 100%;" track={{track.node.audioFile.file}} Name={{title}}></app-podcast>
+  <ion-row *ngFor="let item of episodes"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
+    <app-vod style=" width: 100%;" id={{id}}></app-vod>
   </ion-row>
 
   <ion-row *ngIf="empty" class="ion-padding">
     <ion-col class="ion-text-center">
-      <ion-label>این پادکست خالی است !</ion-label>
+      <ion-label>این سریال خالی است !</ion-label>
     </ion-col>
   </ion-row>
-  
+
 </div>
 
 
   <ion-row *ngIf="!hasBought" class="ion-padding">
     <ion-col class="ion-text-center">
-      <ion-button (click)="add()">
+      <ion-button (click)="add()" >
         اضافه کردن به سبد خرید
       </ion-button>
     </ion-col>
   </ion-row>
-
-
-  
 
   <!-- <ion-row *ngFor="let track of playlist" (click)="func(track)"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
     <app-podcast style=" width: 100%;" part={{track.part}}></app-podcast>
@@ -90,19 +87,10 @@
 <!-- </ion-list> -->
 </ion-content>
 
-<ion-toolbar *ngIf="this.serv.activetrack" style=" --ion-background-color:#007cbf;">
+<!-- <ion-toolbar *ngIf="this.serv.activetrack" style=" --ion-background-color:#007cbf;">
   <ion-row style="height:100%;" class="ion-text-center vertical-align-content">
-  <!-- <ion-col size="8" style="height:auto;" class="ion-text-right ion-padding-horizontal vertical-align-content">
-    <ion-label color="light" style="height:auto;" class="vertical-align-content">
-      <strong>
-     قسمت{{this.serv.activetrack.part}}
-  </strong>
-    </ion-label>
-  </ion-col> -->
   <ion-col size="2" class="ion-text-right" style="padding-top: 0.7em;">
-    <!-- <ion-button fill="clear"> -->
     <ion-icon size="large" color="light" class="ion-text-left" name="chevron-up-outline" (click)="openModal(this.serv.activetrack)"></ion-icon>
-  <!-- </ion-button> -->
   </ion-col>
   <ion-col class="ion-text-center" size="2">
     <ion-button  color="light" fill="clear" (click)="this.serv.next()">
@@ -131,4 +119,4 @@
     </ion-col>
   
 </ion-row>
-</ion-toolbar>
+</ion-toolbar> -->

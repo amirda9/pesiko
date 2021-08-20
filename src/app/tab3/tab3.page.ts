@@ -30,6 +30,11 @@ export class Tab3Page {
     };
 
 
+    series(){
+      this.router.navigate(['/tabs/series']);
+    }
+
+
     pod(){
       this.router.navigate(['/tabs/tab1']);
     }

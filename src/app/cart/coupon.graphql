@@ -1,0 +1,5 @@
+mutation coupon($action:String!,$title:String!){
+  couponToBasket(action:$action,couponTitle:$title){
+    status
+  }
+}

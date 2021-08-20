@@ -1,0 +1,17 @@
+query Serial($id:ID!){
+serial(id:$id) {
+  id
+  title
+  hasBought
+  product{
+  id
+  }
+  episodeSet{
+    edges{
+      node{
+        title
+      }
+    }
+  }
+}
+}

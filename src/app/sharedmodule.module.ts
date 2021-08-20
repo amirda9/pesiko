@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { PodcastComponent } from './podcast/podcast.component';
+import { VodComponent } from './vod/vod.component';
 
 CUSTOM_ELEMENTS_SCHEMA
 @NgModule({
@@ -13,8 +14,8 @@ CUSTOM_ELEMENTS_SCHEMA
     IonicModule,
     // StarRatingModule.forRoot(),
   ],
-  exports:[BlogPostComponent,PodcastComponent],
-  declarations: [BlogPostComponent,PodcastComponent],
+  exports:[BlogPostComponent,PodcastComponent,VodComponent],
+  declarations: [BlogPostComponent,PodcastComponent,VodComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModuleModule {}

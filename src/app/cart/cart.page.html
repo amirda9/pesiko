@@ -6,6 +6,44 @@
 
 <ion-content>
 
+  
+
+  <ion-row class="ion-padding-horizontal" style="padding-top: 1.5em;">
+    <ion-col>
+      <h2 style="--ion-background-color: #f6f6f6;"><span>محصولات</span></h2>
+<!-- <p>this is some content other</p> -->
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-text-center " style="padding-top: 2em;">
+    <ion-col  class="ion-text-center" *ngIf="empty">
+      <ion-label >
+        سبد خرید شما خالی است .
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let item of products">
+    <ion-col>
+      <ion-card>
+        <ion-row>
+          <ion-col size="9">
+            <ion-label class="ion-padding">
+            {{item.node.title}}
+          </ion-label>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button fill="clear" color="danger" (click)="remove(item.node.id)">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+    </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="!empty" class="ion-padding-horizontal">
+    <h2></h2>
   <ion-row class="ion-padding-top" *ngIf="!status">
     <ion-col class="ion-text-center">
       <ion-label style="color: red;">
@@ -39,31 +77,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-row class="ion-padding-horizontal" style="padding-top: 1.5em;">
-    <ion-col>
-      <h2 style="--ion-background-color: #f6f6f6;"><span>سبد خرید</span></h2>
-<!-- <p>this is some content other</p> -->
-    </ion-col>
-  </ion-row>
+</div>
 
-  <ion-row *ngFor="let item of products">
-    <ion-col>
-      <ion-card>
-        <ion-row>
-          <ion-col size="9">
-            <ion-label class="ion-padding">
-            {{item.node.title}}
-          </ion-label>
-          </ion-col>
-          <ion-col size="3">
-            <ion-button fill="clear" color="danger" (click)="remove(item.node.id)">
-              <ion-icon name="close-outline"></ion-icon>
-            </ion-button>
-          </ion-col>
-        </ion-row>
-
-    </ion-card>
-    </ion-col>
-  </ion-row>
 
 </ion-content>

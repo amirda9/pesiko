@@ -16,7 +16,7 @@ const uri = 'https://pesiko.liara.run/graphql'; // <-- add the URL of the GraphQ
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   const basic = setContext((operation, context) => ({
     headers: {
-      Accept: 'charset=utf-8'
+      Accept: 'charset=utf-8',
     }
   }));
   const auth = setContext((operation, context) => {

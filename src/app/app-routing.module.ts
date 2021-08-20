@@ -4,6 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -57,6 +62,18 @@ const routes: Routes = [
   {
     path: 'pay_res',
     loadChildren: () => import('./pay-res/pay-res.module').then( m => m.PayResPageModule)
+  },
+  {
+    path: 'series',
+    loadChildren: () => import('./series/series.module').then( m => m.SeriesPageModule)
+  },
+  {
+    path: 'vod-page',
+    loadChildren: () => import('./vod-page/vod-page.module').then( m => m.VodPagePageModule)
+  },
+  {
+    path: 'vod-modal',
+    loadChildren: () => import('./vod-modal/vod-modal.module').then( m => m.VodModalPageModule)
   }
 ];
 @NgModule({

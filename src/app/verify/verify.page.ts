@@ -9,11 +9,11 @@ import { ID,USERNAME } from '../constants';
   selector: '[moveNextByMaxLength]'
   })
   
-@Component({
-  selector: 'app-verify',
-  templateUrl: './verify.page.html',
-  styleUrls: ['./verify.page.scss'],
-})
+// @Component({
+//   selector: 'app-verify',
+//   templateUrl: './verify.page.html',
+//   styleUrls: ['./verify.page.scss'],
+// })
 export class VerifyPage implements OnInit {
 
   time:any;

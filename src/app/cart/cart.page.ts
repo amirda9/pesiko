@@ -15,11 +15,19 @@ export class CartPage implements OnInit {
   status:boolean;
   public path:any;
   products:any;
+  empty:boolean;
   constructor(private basketgql:BasketGQL,private addgql:AddGQL , private paygql:PayGQL , private loadingController:LoadingController) {
     this.basketgql.watch().valueChanges.subscribe(res=>{
-      this.amount=res.data.currentBasket.totalAmount;
+      if(res.data.currentBasket){
+        this.empty = false;
+        this.amount=res.data.currentBasket.totalAmount;
       this.status=res.data.currentBasket.isPaid;
       this.products = res.data.currentBasket.products.edges;
+      }
+      else{
+        console.log("empty");
+        this.empty = true;
+      }
     })
    }
 

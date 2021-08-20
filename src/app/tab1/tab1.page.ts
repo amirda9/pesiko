@@ -21,6 +21,7 @@ export class Tab1Page {
   }
 
   play(a){
+    // console.log(a)
     let navigationExtras: NavigationExtras = {
       state: {
         id: a

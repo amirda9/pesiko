@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title
+      style="font-weight: bold; font-size: 19pt"
+      class="ion-text-center"
+    >
+      سریال ها
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="shop()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <div *ngFor="let item of vids | async">
+    <!-- {{item.node.title}} -->
+    <div class="ion-padding">
+      <ion-card>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col><strong>{{item.node.title}}</strong></ion-col>
+        </ion-row>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col>{{item.node.description}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><div inner></div></ion-col>
+        </ion-row>
+
+        <ion-row class="ion-padding-bottom">
+          <ion-col>
+            <ion-button shape="round" (click)="play(item.node.id)"> پخش </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- <div class="ion-padding">
+    <ion-card>
+      <ion-row>
+        <ion-col> دومین سریال </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> این یک متن ساده است </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding-bottom">
+        <ion-col>
+          <ion-button shape="round" (click)="play(2)"> پخش </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+
+  <div class="ion-padding">
+    <ion-card>
+      <ion-row>
+        <ion-col> سومین سریال </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> متن برای مثال </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding-bottom">
+        <ion-col>
+          <ion-button shape="round" (click)="play(3)"> پخش </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div> -->
+</ion-content>
