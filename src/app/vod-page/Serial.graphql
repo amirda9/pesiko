@@ -10,6 +10,7 @@ serial(id:$id) {
     edges{
       node{
         title
+        id
       }
     }
   }

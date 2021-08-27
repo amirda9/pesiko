@@ -1,0 +1,11 @@
+query episode($id:ID!){
+  episode(id:$id){
+    title
+    videoFile{
+      file
+    }
+    serial{
+      title
+    }
+  }
+}

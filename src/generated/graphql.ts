@@ -2293,6 +2293,26 @@ export type Verify_UserMutation = (
   )> }
 );
 
+export type EpisodeQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type EpisodeQuery = (
+  { __typename?: 'Query' }
+  & { episode?: Maybe<(
+    { __typename?: 'EpisodeNode' }
+    & Pick<EpisodeNode, 'title'>
+    & { videoFile?: Maybe<(
+      { __typename?: 'FileNode' }
+      & Pick<FileNode, 'file'>
+    )>, serial?: Maybe<(
+      { __typename?: 'SerialNode' }
+      & Pick<SerialNode, 'title'>
+    )> }
+  )> }
+);
+
 export type SerialQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
@@ -2312,7 +2332,7 @@ export type SerialQuery = (
         { __typename?: 'EpisodeNodeEdge' }
         & { node?: Maybe<(
           { __typename?: 'EpisodeNode' }
-          & Pick<EpisodeNode, 'title'>
+          & Pick<EpisodeNode, 'title' | 'id'>
         )> }
       )>> }
     ) }
@@ -2726,6 +2746,30 @@ export const Verify_UserDocument = gql`
       super(apollo);
     }
   }
+export const EpisodeDocument = gql`
+    query episode($id: ID!) {
+  episode(id: $id) {
+    title
+    videoFile {
+      file
+    }
+    serial {
+      title
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class EpisodeGQL extends Apollo.Query<EpisodeQuery, EpisodeQueryVariables> {
+    document = EpisodeDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const SerialDocument = gql`
     query Serial($id: ID!) {
   serial(id: $id) {
@@ -2739,6 +2783,7 @@ export const SerialDocument = gql`
       edges {
         node {
           title
+          id
         }
       }
     }

@@ -26,10 +26,10 @@
     
         <ion-row class="ion-padding-bottom ion-text-right">
           <ion-col>
-          <ion-label style="font-weight: bold; font-size: 15pt; white-space: nowrap;">
-            <strong>
+          <ion-label style="font-weight: bold; font-size: 15pt; white-space: pre-line; word-wrap: break-word;">
+            <!-- <strong style="word-wrap: break-word;"> -->
            {{title}}
-            </strong>
+            <!-- </strong> -->
           </ion-label>
           </ion-col>
         </ion-row>
@@ -58,8 +58,8 @@
   </ion-row>
   
   <div *ngIf="hasBought" class="ion-padding-top">
-  <ion-row *ngFor="let item of episodes"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
-    <app-vod style=" width: 100%;" id={{id}}></app-vod>
+  <ion-row *ngFor="let item of episodes | async"  style="border-radius: 2%; padding-right: 6%; padding-left: 6%; padding-top:3%;" class="ion-text-center ">
+    <app-vod style=" width: 100%;" id={{item.node.id}} title={{item.node.title}}></app-vod>
   </ion-row>
 
   <ion-row *ngIf="empty" class="ion-padding">

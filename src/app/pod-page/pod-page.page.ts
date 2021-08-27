@@ -57,6 +57,7 @@ export class PodPagePage implements OnInit {
     this.trackGQL.watch({
       ID:this.id,}).valueChanges.subscribe(res=>{
         this.hasBought = res.data.podcast.hasBought;
+        console.log("buy" + this.hasBought)
         this.prod_id = res.data.podcast.product.id;
         if(res.data.podcast.trackSet.edges.length > 0){
           this.tracks = this.trackGQL.watch({

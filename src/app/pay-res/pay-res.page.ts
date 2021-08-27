@@ -16,7 +16,7 @@ export class PayResPage implements OnInit {
       if (params) {
         let res = params.status;
         console.log(res);
-        if(res=="True")
+        if(res=="1")
         {
           this.status=true;
           console.log("success");

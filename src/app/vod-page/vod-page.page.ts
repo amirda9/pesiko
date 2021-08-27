@@ -36,7 +36,7 @@ export class VodPagePage implements OnInit {
       if(res.data.serial.product){
         this.prod_id = res.data.serial.product.id;
       }
-      console.log(this.hasBought)
+      console.log(this.hasBought,res.data.serial.episodeSet.edges.length )
 
       if(res.data.serial.episodeSet.edges.length > 0 ){
         this.episodes = this.SerialGQL.watch({

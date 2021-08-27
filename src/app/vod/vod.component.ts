@@ -9,11 +9,14 @@ import { VodModalPage } from '../vod-modal/vod-modal.page';
 })
 export class VodComponent implements OnInit {
 
-  @Input() id:any;
+  @Input() id:string;
+  @Input() title:string;
   filled:boolean = false;
   constructor(private modalCtrl:ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // console.log(this.id)
+  }
 
   fill(){
     this.filled = !this.filled;
